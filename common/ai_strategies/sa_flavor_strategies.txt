@@ -34,24 +34,20 @@ ai_strategy_unify_india = {
 				limit = {
 					scope:target_country = {
 						any_scope_state = {
-							state_region = {
-								region = {
-									OR = {
-										this = region_north_india
-										this = region_south_india
-										AND = {
-											this = region_himalayas
-											prev = STATE_KASHMIR
-										}
-										AND = {
-											this = region_persia
-											OR = {
-												prev = STATE_BALUCHISTAN
-												prev = STATE_PASHTUNISTAN
-											}
-										}	
-									}
+							OR = {
+								region = sr:region_north_india
+								region = sr:region_south_india
+								AND = {
+									region = sr:region_himalayas
+									state_region = s:STATE_KASHMIR
 								}
+								AND = {
+									region = sr:region_persia
+									OR = {
+										state_region = s:STATE_BALUCHISTAN
+										state_region = s:STATE_PASHTUNISTAN
+									}
+								}	
 							}
 						}
 					}
@@ -59,15 +55,6 @@ ai_strategy_unify_india = {
 				}
 				add = 1000
 			}
-			if = {
-				limit = {
-					scope:target_state = {
-						is_homeland_of_country_cultures = ROOT
-					}
-					can_reach_target_state = yes
-				}
-				add = 1000
-			} 	
 			if = {
 				limit = {
 					any_scope_state = {
@@ -82,24 +69,20 @@ ai_strategy_unify_india = {
 			if = {
 				limit = {
 					scope:target_state = {
-						state_region = {
-							region = {
-								OR = {
-									this = region_north_india
-									this = region_south_india
-									AND = {
-										this = region_himalayas
-										prev = STATE_KASHMIR
-									}
-									AND = {
-										this = region_persia
-										OR = {
-											prev = STATE_BALUCHISTAN
-											prev = STATE_PASHTUNISTAN
-										}
-									}	
-								}
+						OR = {
+							region = sr:region_north_india
+							region = sr:region_south_india
+							AND = {
+								region = sr:region_himalayas
+								state_region = s:STATE_KASHMIR
 							}
+							AND = {
+								region = sr:region_persia
+								OR = {
+									state_region = s:STATE_BALUCHISTAN
+									state_region = s:STATE_PASHTUNISTAN
+								}
+							}	
 						}
 					}
 					can_reach_target_state = yes
@@ -120,24 +103,20 @@ ai_strategy_unify_india = {
 			if = {
 				limit = {
 					scope:target_state = {
-						state_region = {
-							region = {
-								OR = {
-									this = region_north_india
-									this = region_south_india
-									AND = {
-										this = region_himalayas
-										prev = STATE_KASHMIR
-									}
-									AND = {
-										this = region_persia
-										OR = {
-											prev = STATE_BALUCHISTAN
-											prev = STATE_PASHTUNISTAN
-										}
-									}	
-								}
+						OR = {
+							region = sr:region_north_india
+							region = sr:region_south_india
+							AND = {
+								region = sr:region_himalayas
+								state_region = s:STATE_KASHMIR
 							}
+							AND = {
+								region = sr:region_persia
+								OR = {
+									state_region = s:STATE_BALUCHISTAN
+									state_region = s:STATE_PASHTUNISTAN
+								}
+							}	
 						}
 					}
 					can_reach_target_state = yes
@@ -173,40 +152,27 @@ ai_strategy_unify_india = {
 				limit = {
 					scope:target_country = {
 						any_scope_state = {
-							state_region = {
-								region = {
-									OR = {
-										this = region_north_india
-										this = region_south_india
-										AND = {
-											this = region_himalayas
-											prev = STATE_KASHMIR
-										}
-										AND = {
-											this = region_persia
-											OR = {
-												prev = STATE_BALUCHISTAN
-												prev = STATE_PASHTUNISTAN
-											}
-										}	
-									}
+							OR = {
+								region = sr:region_north_india
+								region = sr:region_south_india
+								AND = {
+									region = sr:region_himalayas
+									state_region = s:STATE_KASHMIR
 								}
+								AND = {
+									region = sr:region_persia
+									OR = {
+										state_region = s:STATE_BALUCHISTAN
+										state_region = s:STATE_PASHTUNISTAN
+									}
+								}	
 							}
 						}
 					}
 					can_reach_target_state = yes
 				}
 				add = 1000
-			}
-			if = {
-				limit = {
-					scope:target_state = {
-						is_homeland_of_country_cultures = ROOT
-					}
-					can_reach_target_state = yes
-				}
-				add = 1000
-			} 	
+			}	
 			if = {
 				limit = {
 					any_scope_state = {
@@ -217,6 +183,114 @@ ai_strategy_unify_india = {
 				add = 1000
 			}				
 		}	
+		befriend = {				
+			if = {
+				limit = {
+					scope:target_country = {
+						any_scope_state = {
+							OR = {
+								region = sr:region_north_india
+								region = sr:region_south_india
+								AND = {
+									region = sr:region_himalayas
+									state_region = s:STATE_KASHMIR
+								}
+								AND = {
+									region = sr:region_persia
+									OR = {
+										state_region = s:STATE_BALUCHISTAN
+										state_region = s:STATE_PASHTUNISTAN
+									}
+								}	
+							}
+						}
+					}
+					can_reach_target_state = yes
+				}
+				multiply = 0
+			}	
+			if = {
+				limit = {
+					any_scope_state = {
+						is_homeland_of_country_cultures = ROOT
+					}
+					can_reach_target_country = yes
+				}
+				multiply = 0
+			}				
+		}
+		reconcile = {				
+			if = {
+				limit = {
+					scope:target_country = {
+						any_scope_state = {
+							OR = {
+								region = sr:region_north_india
+								region = sr:region_south_india
+								AND = {
+									region = sr:region_himalayas
+									state_region = s:STATE_KASHMIR
+								}
+								AND = {
+									region = sr:region_persia
+									OR = {
+										state_region = s:STATE_BALUCHISTAN
+										state_region = s:STATE_PASHTUNISTAN
+									}
+								}	
+							}
+						}
+					}
+					can_reach_target_state = yes
+				}
+				multiply = 0
+			}	
+			if = {
+				limit = {
+					any_scope_state = {
+						is_homeland_of_country_cultures = ROOT
+					}
+					can_reach_target_country = yes
+				}
+				multiply = 0
+			}				
+		}
+		protect = {				
+			if = {
+				limit = {
+					scope:target_country = {
+						any_scope_state = {
+							OR = {
+								region = sr:region_north_india
+								region = sr:region_south_india
+								AND = {
+									region = sr:region_himalayas
+									state_region = s:STATE_KASHMIR
+								}
+								AND = {
+									region = sr:region_persia
+									OR = {
+										state_region = s:STATE_BALUCHISTAN
+										state_region = s:STATE_PASHTUNISTAN
+									}
+								}	
+							}
+						}
+					}
+					can_reach_target_state = yes
+				}
+				multiply = 0
+			}	
+			if = {
+				limit = {
+					any_scope_state = {
+						is_homeland_of_country_cultures = ROOT
+					}
+					can_reach_target_country = yes
+				}
+				multiply = 0
+			}				
+		}			
 	}	
 
 	weight = {
