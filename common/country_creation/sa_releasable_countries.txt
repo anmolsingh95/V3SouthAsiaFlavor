@@ -1,0 +1,16 @@
+﻿BIK = {
+	states = {
+		STATE_RAJPUTANA
+	}
+	ai_will_do = { always = no }
+}
+
+MUG = {
+	states = {
+		STATE_DELHI
+		STATE_AWADH
+		STATE_BIHAR
+		STATE_CENTRAL_INDIA
+	}
+	ai_will_do = { always = no }
+}
