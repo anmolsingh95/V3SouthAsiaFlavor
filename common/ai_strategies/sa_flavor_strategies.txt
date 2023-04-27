@@ -169,7 +169,6 @@ ai_strategy_unify_india = {
 							}
 						}
 					}
-					can_reach_target_state = yes
 				}
 				add = 1000
 			}	
@@ -178,7 +177,6 @@ ai_strategy_unify_india = {
 					any_scope_state = {
 						is_homeland_of_country_cultures = ROOT
 					}
-					can_reach_target_country = yes
 				}
 				add = 1000
 			}				
@@ -205,7 +203,6 @@ ai_strategy_unify_india = {
 							}
 						}
 					}
-					can_reach_target_state = yes
 				}
 				multiply = 0
 			}	
@@ -214,7 +211,6 @@ ai_strategy_unify_india = {
 					any_scope_state = {
 						is_homeland_of_country_cultures = ROOT
 					}
-					can_reach_target_country = yes
 				}
 				multiply = 0
 			}				
@@ -241,7 +237,6 @@ ai_strategy_unify_india = {
 							}
 						}
 					}
-					can_reach_target_state = yes
 				}
 				multiply = 0
 			}	
@@ -250,7 +245,6 @@ ai_strategy_unify_india = {
 					any_scope_state = {
 						is_homeland_of_country_cultures = ROOT
 					}
-					can_reach_target_country = yes
 				}
 				multiply = 0
 			}				
@@ -277,7 +271,6 @@ ai_strategy_unify_india = {
 							}
 						}
 					}
-					can_reach_target_state = yes
 				}
 				multiply = 0
 			}	
@@ -286,7 +279,6 @@ ai_strategy_unify_india = {
 					any_scope_state = {
 						is_homeland_of_country_cultures = ROOT
 					}
-					can_reach_target_country = yes
 				}
 				multiply = 0
 			}				
