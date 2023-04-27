@@ -17,7 +17,7 @@ ai_strategy_unify_india = {
 	}
 	
 	aggression = {
-		value = 100
+		value = 1000
 	}
 
 	possible = {
@@ -29,39 +29,19 @@ ai_strategy_unify_india = {
 		annex_country = {
 			if = {
 				limit = {
-					scope:target_country = {
-						can_form_nation = BHT
+					any_scope_state = {
+						is_homeland_of_country_cultures = ROOT
 					}
 					can_reach_target_country = yes
 				}
 				add = 1000
-			}		
+			}	
 		}	
 		conquer_state = {
 			if = {
 				limit = {
-					scope:target_state = {				
-						state_region = {
-							OR = {
-						      	is_homeland = cu:avadhi
-								is_homeland = cu:assamese
-								is_homeland = cu:baluchi
-								is_homeland = cu:bengali
-								is_homeland = cu:bihari
-								is_homeland = cu:gujarati
-								is_homeland = cu:kanauji
-								is_homeland = cu:kannada
-								is_homeland = cu:malayalam
-								is_homeland = cu:marathi
-								is_homeland = cu:oriya
-								is_homeland = cu:panjabi
-								is_homeland = cu:pashtun
-								is_homeland = cu:rajput
-								is_homeland = cu:sindi
-								is_homeland = cu:tamil
-								is_homeland = cu:telegu
-							}		
-						}
+					scope:target_state = {
+						is_homeland_of_country_cultures = ROOT
 					}
 					can_reach_target_state = yes
 				}
@@ -71,28 +51,8 @@ ai_strategy_unify_india = {
 		return_state = {
 			if = {
 				limit = {
-					scope:target_state = {				
-						state_region = {
-							OR = {
-								is_homeland = cu:avadhi
-								is_homeland = cu:assamese
-								is_homeland = cu:baluchi
-								is_homeland = cu:bengali
-								is_homeland = cu:bihari
-								is_homeland = cu:gujarati
-								is_homeland = cu:kanauji
-								is_homeland = cu:kannada
-								is_homeland = cu:malayalam
-								is_homeland = cu:marathi
-								is_homeland = cu:oriya
-								is_homeland = cu:panjabi
-								is_homeland = cu:pashtun
-								is_homeland = cu:rajput
-								is_homeland = cu:sindi
-								is_homeland = cu:tamil
-								is_homeland = cu:telegu
-							}		
-						}
+					scope:target_state = {
+						is_homeland_of_country_cultures = ROOT
 					}
 					can_reach_target_state = yes
 				}
@@ -106,8 +66,11 @@ ai_strategy_unify_india = {
 			if = {
 				limit = {
 					scope:target_country = {
-						can_form_nation = BHT
+						any_primary_culture = {
+							has_discrimination_trait = south_asian_heritage
+						}
 					}
+					can_reach_target_country = yes
 				}
 				add = 1000
 			}				
