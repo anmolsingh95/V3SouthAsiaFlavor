@@ -22,6 +22,9 @@ ai_strategy_unify_india = {
 
 	possible = {
 		NOT = { exists = c:BHT }
+		any_primary_culture = {
+			has_discrimination_trait = south_asian_heritage
+		}
 		can_form_nation = BHT
 	}
 
@@ -131,7 +134,7 @@ ai_strategy_unify_india = {
 					scope:target_country = {
 						any_primary_culture = {
 							has_discrimination_trait = south_asian_heritage
-							NOT = { this = cu:panjabi}
+							NOT = { this = cu:panjabi }
 						}
 					}
 					can_reach_target_country = yes
