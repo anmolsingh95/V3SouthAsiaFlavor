@@ -47,14 +47,18 @@ bic_breakup.1 = {
 					is_capital = no
 					NOT = {
 						state_region = {
-							is_homeland = cu:bengali
+							OR = {
+								is_homeland = cu:bengali
+								is_homeland = cu:tamil
+								is_homeland = cu:bihari
+							}
 						}
 					}
 					any_neighbouring_state = {
 						owner = {
 							save_temporary_scope_as = a_country
 							is_subject_of = ROOT
-							PREV.PREV {
+							prev.prev {
 								is_homeland_of_country_cultures = scope:a_country
 							}
 						}
@@ -79,7 +83,6 @@ bic_breakup.1 = {
 				}
 				save_scope_as = test_scope
 			}
-
 			random_scope_state = {
 				limit = {
 					is_capital = no
@@ -89,6 +92,53 @@ bic_breakup.1 = {
 						}
 					}
 					is_homeland_of_country_cultures = scope:test_scope
+					any_neighbouring_state = {
+						owner = scope:test_scope
+					}
+				}
+				set_state_owner = scope:test_scope
+			}
+			clear_saved_scope = test_scope
+		}
+		while = {
+			limit = {
+				any_scope_state = { 
+					is_capital = no
+					NOT = {
+						state_region = {
+							is_homeland = cu:bengali
+						}
+					}
+					any_neighbouring_state = {
+						owner = { is_subject_of = ROOT }
+					}
+				}
+			}
+			random_country = {
+				limit = {
+					is_subject_of = ROOT
+					any_scope_state = {
+						any_neighbouring_state = {
+							is_capital = no
+							NOT = {
+								state_region = {
+									is_homeland = cu:bengali
+								}
+							}
+							owner = ROOT
+						}
+					}
+				}
+				save_scope_as = test_scope
+			}
+			random_scope_state = {
+				limit = {
+					is_capital = no
+					NOT = {
+						state_region = {
+							is_homeland = cu:bengali
+						}
+					}
 					any_neighbouring_state = {
 						owner = scope:test_scope
 					}
