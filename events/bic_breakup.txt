@@ -57,6 +57,7 @@ bic_breakup.1 = {
 			}
 			random_country = {
 				limit = {
+					save_temporary_scope_as = r_country
 					is_subject_of = ROOT
 					any_scope_state = {
 						any_neighbouring_state = {
@@ -66,12 +67,14 @@ bic_breakup.1 = {
 									is_homeland = cu:bengali
 								}
 							}
+							is_homeland_of_country_cultures = scope:r_country
 							owner = ROOT
 						}
 					}
 				}
 				save_scope_as = test_scope
 			}
+
 			random_scope_state = {
 				limit = {
 					is_capital = no
@@ -80,6 +83,7 @@ bic_breakup.1 = {
 							is_homeland = cu:bengali
 						}
 					}
+					is_homeland_of_country_cultures = scope:test_scope
 					any_neighbouring_state = {
 						owner = scope:test_scope
 					}
