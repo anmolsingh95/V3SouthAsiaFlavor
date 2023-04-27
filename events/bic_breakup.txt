@@ -51,14 +51,19 @@ bic_breakup.1 = {
 						}
 					}
 					any_neighbouring_state = {
-						owner = { is_subject_of = ROOT }
+						owner = {
+							save_temporary_scope_as = a_country
+							is_subject_of = ROOT
+							PREV.PREV {
+								is_homeland_of_country_cultures = scope:a_country
+							}
+						}
 					}
 				}
 			}
 			random_country = {
 				limit = {
 					save_temporary_scope_as = r_country
-					is_subject_of = ROOT
 					any_scope_state = {
 						any_neighbouring_state = {
 							is_capital = no
