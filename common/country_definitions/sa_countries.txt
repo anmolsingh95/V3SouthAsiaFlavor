@@ -1,0 +1,22 @@
+﻿PAN = {
+	color = { 119  171  111}
+	
+	country_type = unrecognized
+	
+	tier = kingdom
+	
+	cultures = { panjabi }
+	capital = STATE_PUNJAB
+	is_named_from_capital = yes
+}
+
+MUG = {
+	color = { 150  230  255 }
+	
+	country_type = unrecognized
+	
+	tier = empire
+	
+	cultures = { avadhi sindi kannada bengali }
+	capital = STATE_AWADH
+}
