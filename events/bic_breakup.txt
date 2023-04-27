@@ -154,6 +154,7 @@ bic_breakup.1 = {
 					is_subject_of = ROOT
 				}
 				make_independent = yes
+				set_strategy = ai_strategy_unify_india
 			}
 		}
 		change_tag = BGL
