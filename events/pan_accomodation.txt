@@ -38,12 +38,12 @@ pan_accomodation.1 = {
 		}
 		add_primary_culture = cu:pashtun
 		add_loyalists = {
-			culture = cu:baluchi
+			culture = cu:pashtun
 			value = medium_radicals
 		}	
 		add_radicals = {
-			culture = cu:pashtun
-			value = large_radicals
+			culture = cu:panjabi
+			value = medium_radicals
 		}
 	}
 
