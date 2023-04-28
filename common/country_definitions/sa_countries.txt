@@ -17,6 +17,6 @@ MUG = {
 	
 	tier = empire
 	
-	cultures = { avadhi sindi kannada bengali }
+	cultures = { avadhi sindi kannada bengali pashtun}
 	capital = STATE_AWADH
 }
