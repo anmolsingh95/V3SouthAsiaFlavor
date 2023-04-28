@@ -1,0 +1,115 @@
+﻿namespace = panjab_accomodation
+
+# Accomodate the tribal people of western panjab area.
+pan_accomodation.1 = {
+	type = country_event
+	placement = root
+	
+	title = pan_accomodation.1.t
+	desc = pan_accomodation.1.d
+	flavor = pan_accomodation.1.f
+	
+	event_image = {
+		video = "gfx/event_pictures/unspecific_ruler_speaking_to_people.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/asia/hinduism_sikhism"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	
+	duration = 3
+	
+	trigger = {
+		exists = c:PAN
+		this = c:PAN
+		owns_entire_state_region = STATE_PUNJAB
+		owns_entire_state_region = STATE_KASHMIR
+		owns_entire_state_region = STATE_BALUCHISTAN
+		owns_entire_state_region = STATE_PASHTUNISTAN
+		owns_entire_state_region = STATE_SINDH
+	}
+
+	# accept pashtun
+	option = {
+		name = pan_accomodation.1.a
+		ai_chance = {
+			base = 25
+		}
+		add_primary_culture = cu:pashtun
+		add_loyalists = {
+			culture = cu:baluchi
+			value = medium_radicals
+		}	
+		add_radicals = {
+			culture = cu:pashtun
+			value = large_radicals
+		}
+	}
+
+	# turn sindh, baluchistan and pashtunistan into panjabi homelands
+	option = {
+		name = pan_accomodation.1.b
+		ai_chance = {
+			base = 25
+		}
+		s:STATE_KASHMIR = {
+			add_homeland = panjabi
+			remove_homeland = kashmiri
+		}
+		s:STATE_SINDH = {
+			add_homeland = panjabi
+			remove_homeland = sindi
+		}
+		s:STATE_BALUCHISTAN = {
+			add_homeland = panjabi
+			remove_homeland = baluchi
+			remove_homeland = pashtun
+		}
+		s:STATE_PASHTUNISTAN = {
+			add_homeland = panjabi
+			remove_homeland = pashtun
+		}	
+		add_radicals = {
+			culture = cu:kashmiri
+			value = 0.9
+		}
+		add_radicals = {
+			culture = cu:sindi
+			value = 0.9
+		}
+		add_radicals = {
+			culture = cu:baluchi
+			value = 0.9
+		}	
+		add_radicals = {
+			culture = cu:pashtun
+			value = 0.9
+		}
+		add_loyalists = {
+			culture = cu:panjabi
+			value = medium_radicals
+		}
+		create_incident = {
+			country = ROOT
+			value = 40
+		}
+	}
+
+	# leave things as they are
+	option = {
+		name = pan_accomodation.1.c
+		default_option = yes
+		ai_chance = {
+			base = 50
+		}
+		add_radicals = {
+			culture = cu:baluchi
+			value = medium_radicals
+		}	
+		add_radicals = {
+			culture = cu:pashtun
+			value = medium_radicals
+		}	
+	}
+}
