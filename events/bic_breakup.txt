@@ -91,6 +91,7 @@ bic_breakup.1 = {
 					exists = scope:test_scope
 				}
 				set_state_owner = scope:test_scope
+				set_state_type = incorporated
 				clear_saved_scope = test_scope
 			}
 		}
@@ -139,6 +140,7 @@ bic_breakup.1 = {
 					}
 				}
 				set_state_owner = scope:test_scope
+				set_state_type = incorporated
 			}
 			clear_saved_scope = test_scope
 		}
