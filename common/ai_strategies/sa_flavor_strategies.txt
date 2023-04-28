@@ -295,6 +295,12 @@ ai_strategy_unify_india = {
 	}	
 
 	weight = {
-		value = 1000	
+		value = 1000
+		if = {
+			limit = {
+				is_subject_of = c:BIC
+			}
+			multiply = 0
+		}	
 	}
 }
