@@ -8,9 +8,6 @@ ai_strategy_unify_india = {
 	wanted_army_ratio = 400000 # 1 barrack per 400k incorporated population
 	wanted_navy_ratio = 400000 # 1 naval base per 400k coastal incorporated population
 
-	desired_tax_level = very_high
-	max_tax_level = very_high
-
 	undesirable_infamy_level = {
 		value = 50
 	}
@@ -20,7 +17,31 @@ ai_strategy_unify_india = {
 	}
 	
 	aggression = {
-		value = 1000
+		if = {
+			limit = {
+				scope:target_country = {
+					any_scope_state = {
+						OR = {
+							region = sr:region_north_india
+							region = sr:region_south_india
+							AND = {
+								region = sr:region_himalayas
+								state_region = s:STATE_KASHMIR
+							}
+							AND = {
+								region = sr:region_persia
+								OR = {
+									state_region = s:STATE_BALUCHISTAN
+									state_region = s:STATE_PASHTUNISTAN
+								}
+							}	
+						}
+					}
+				}
+				can_reach_target_country = yes
+			}
+			add = 1000
+		}
 	}
 
 	possible = {
