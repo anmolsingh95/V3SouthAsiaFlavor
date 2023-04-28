@@ -8,6 +8,9 @@ ai_strategy_unify_india = {
 	wanted_army_ratio = 400000 # 1 barrack per 400k incorporated population
 	wanted_navy_ratio = 400000 # 1 naval base per 400k coastal incorporated population
 
+	desired_tax_level = very_high
+	max_tax_level = very_high
+
 	undesirable_infamy_level = {
 		value = 50
 	}
@@ -144,6 +147,12 @@ ai_strategy_unify_india = {
 				add = 1000
 			}
 		}		
+	}
+
+	secret_goal_weights = {
+		protect = 1
+		dominate = 100
+		reconcile = 1
 	}	
 
 	secret_goal_scores = {
