@@ -1,4 +1,4 @@
-﻿namespace = panjab_accomodation
+﻿namespace = pan_accomodation
 
 # Accomodate the tribal people of western panjab area.
 pan_accomodation.1 = {

@@ -8,3 +8,7 @@
   pan_accomodation.1.a:0 "Panjabis stand for equal treatment."
   pan_accomodation.1.b:0 "Panjab has no place for others."
   pan_accomodation.1.c:0 "Leave things as they are."
+
+  # fate of the tribesmen
+  je_fate_of_the_tribesmen:0 "Fate of the tribesmen"
+  je_fate_of_the_tribesmen_desc:0 "After Panjab secures its frontiers and access to the ocean, it needs to be decided what to do with the western tribesmen."
