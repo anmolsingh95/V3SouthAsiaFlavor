@@ -146,6 +146,12 @@ ai_strategy_unify_india = {
 				}
 				add = 1000
 			}
+		}
+		independence = {
+			value = 1000
+		}			
+		secession = {
+			value = 1000
 		}		
 	}
 
