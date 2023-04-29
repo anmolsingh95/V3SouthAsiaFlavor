@@ -103,7 +103,7 @@ ai_strategy_unify_india = {
                         }
                     }
                 }
-                multiply = 0
+                multiply = 0.0
             }
         }
         reconcile = {
@@ -116,7 +116,7 @@ ai_strategy_unify_india = {
                         }
                     }
                 }
-                multiply = 0
+                multiply = 0.0
             }
         }
         protect = {
@@ -129,8 +129,9 @@ ai_strategy_unify_india = {
                         }
                     }
                 }
-                multiply = 0
+                multiply = 0.0
             }
+            multiply = 0.0
         }
     }
 
