@@ -23,10 +23,10 @@ is_country_capital_former_bic_territory = {
 	}
 }
 
-does_not_own_any_former_bic_territory = {
+has_yet_to_unify_all_former_bic_territory = {
 	has_global_variable_list = former_bic_territories_list
 	any_in_global_list = {
-		name = former_bic_territories_limit
+		name = former_bic_territories_list
 		NOT = {
 			owner = ROOT
 		}
