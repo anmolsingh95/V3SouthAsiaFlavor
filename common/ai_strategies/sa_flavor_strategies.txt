@@ -235,7 +235,7 @@ ai_strategy_unify_india = {
 						}
 					}
 				}
-				multiply = 0
+				value = 0
 			}	
 			if = {
 				limit = {
@@ -243,7 +243,7 @@ ai_strategy_unify_india = {
 						is_homeland_of_country_cultures = ROOT
 					}
 				}
-				multiply = 0
+				value = 0
 			}				
 		}
 		reconcile = {				
@@ -269,7 +269,7 @@ ai_strategy_unify_india = {
 						}
 					}
 				}
-				multiply = 0
+				value = 0
 			}	
 			if = {
 				limit = {
@@ -277,7 +277,7 @@ ai_strategy_unify_india = {
 						is_homeland_of_country_cultures = ROOT
 					}
 				}
-				multiply = 0
+				value = 0
 			}				
 		}
 		protect = {				
@@ -303,7 +303,7 @@ ai_strategy_unify_india = {
 						}
 					}
 				}
-				multiply = 0
+				value = 0
 			}	
 			if = {
 				limit = {
@@ -311,7 +311,7 @@ ai_strategy_unify_india = {
 						is_homeland_of_country_cultures = ROOT
 					}
 				}
-				multiply = 0
+				value = 0
 			}				
 		}			
 	}	
@@ -322,7 +322,7 @@ ai_strategy_unify_india = {
 			limit = {
 				is_subject_of = c:BIC
 			}
-			multiply = 0
+			value = 0
 		}	
 	}
 }
