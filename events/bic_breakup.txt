@@ -2,272 +2,272 @@
 
 # Independent British East India Company decides how to proceed
 bic_breakup.1 = {
-	type = country_event
-	placement = root
-	
-	title = bic_breakup.1.t
-	desc = bic_breakup.1.d
-	flavor = bic_breakup.1.f
-	
-	event_image = {
-		video = "gfx/event_pictures/asia_sepoy_mutiny.bk2"
-	}
+    type = country_event
+    placement = root
+    
+    title = bic_breakup.1.t
+    desc = bic_breakup.1.d
+    flavor = bic_breakup.1.f
+    
+    event_image = {
+        video = "gfx/event_pictures/asia_sepoy_mutiny.bk2"
+    }
 
-	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-	on_opened_soundeffect = "event:/SFX/Events/asia/sepoy_mutiny"
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+    on_opened_soundeffect = "event:/SFX/Events/asia/sepoy_mutiny"
 
-	icon = "gfx/interface/icons/event_icons/event_protest.dds"
-	
-	duration = 3
-	
-	trigger = {
-		exists = c:BIC
-		this = c:BIC
-		is_subject = no
-		is_at_war = no
-	}
+    icon = "gfx/interface/icons/event_icons/event_protest.dds"
+    
+    duration = 3
+    
+    trigger = {
+        exists = c:BIC
+        this = c:BIC
+        is_subject = no
+        is_at_war = no
+    }
 
-	immediate = {
-		cu:british = {
-			save_scope_as = british_culture
-		}
-		cu:scottish = { # Making sure to cover for that one Scottish guy
-			save_scope_as = scottish_culture
-		}
-		set_variable = bic_collapse_var
-	}
+    immediate = {
+        cu:british = {
+            save_scope_as = british_culture
+        }
+        cu:scottish = { # Making sure to cover for that one Scottish guy
+            save_scope_as = scottish_culture
+        }
+        set_variable = bic_collapse_var
+    }
 
-	option = {
-		name = bic_breakup.1.a
-		ai_chance = {
-			base = 8 # this is the default pick for the AI
-		}
-		# first give back the split states
-		every_scope_state = {
-			limit = {
-				is_split_state = yes
+    option = {
+        name = bic_breakup.1.a
+        ai_chance = {
+            base = 8 # this is the default pick for the AI
+        }
+        # first give back the split states
+        every_scope_state = {
+            limit = {
+                is_split_state = yes
 
-			}
-			state_region = {
-				every_scope_state = {
-					owner =  {
-						if = {
-							limit = {
-								any_primary_culture = {
-									OR = {
-										has_discrimination_trait = south_asian_heritage
-										has_discrimination_trait = southeast_asian_heritage
-									}
-								}
-							}
-							save_scope_as = test_scope
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					exists = scope:test_scope
-				}
-				set_state_owner = scope:test_scope
-				clear_saved_scope = test_scope
-			}
-		}
-		# first give land to homeland culture accepted states.
-		market = {
-			every_scope_country = {
-				limit = {
-					is_subject_of = ROOT
-				}
-				save_temporary_scope_as = r_country
-				while = {
-					limit = {
-						any_neighbouring_state = {
-							is_capital = no
-							state_region = {
-							 	NOR = {
-									is_homeland = cu:bengali
-									is_homeland = cu:bihari
-							 	}
-							}
-							is_homeland_of_country_cultures = scope:r_country
-							owner = ROOT
-						}
-					}
-					every_neighbouring_state = {
-						limit = {
-							is_capital = no
-							state_region = {
-							 	NOR = {
-									is_homeland = cu:bengali
-									is_homeland = cu:bihari
-							 	}
-							}
-							is_homeland_of_country_cultures = scope:r_country
-							owner = ROOT
-						}
-						set_state_owner = scope:r_country
-					}
-				}
-			}
-		}
-		# give remaining land to adjacent states.
-		market = {
-			every_scope_country = {
-				limit = {
-					is_subject_of = ROOT
-				}
-				save_temporary_scope_as = r_country
-				while = {
-					limit = {
-						any_neighbouring_state = {
-							is_capital = no
-							state_region = {
-							 	NOR = {
-									is_homeland = cu:bengali
-									is_homeland = cu:bihari
-							 	}
-							}
-							owner = ROOT
-						}
-					}				
-					every_neighbouring_state = {
-						limit = {
-							is_capital = no
-							state_region = {
-							 	NOR = {
-									is_homeland = cu:bengali
-									is_homeland = cu:bihari
-							 	}
-							}
-							owner = ROOT
-						}
-						set_state_owner = scope:r_country
-					}
-				}
-			}
-		}
-		# simulate the shutting down of treaty ports in the chaos.
-		every_subject_or_below = {
-			save_scope_as = test_scope
-			every_scope_state = {
-				state_region = {
-					every_scope_state = {
-						limit = {
-							is_treaty_port = yes
-						}
-						set_state_owner = scope:test_scope
-					}
-				}
-			}
-		}
-		every_scope_state = {
-			save_scope_as = test_scope
-			state_region = {
-				every_scope_state = {
-					limit = {
-						is_treaty_port = yes
-					}
-					set_state_owner = scope:test_scope
-				}
-			}
-		}
-		clear_saved_scope = test_scope
+            }
+            state_region = {
+                every_scope_state = {
+                    owner =  {
+                        if = {
+                            limit = {
+                                any_primary_culture = {
+                                    OR = {
+                                        has_discrimination_trait = south_asian_heritage
+                                        has_discrimination_trait = southeast_asian_heritage
+                                    }
+                                }
+                            }
+                            save_scope_as = test_scope
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    exists = scope:test_scope
+                }
+                set_state_owner = scope:test_scope
+                clear_saved_scope = test_scope
+            }
+        }
+        # first give land to homeland culture accepted states.
+        market = {
+            every_scope_country = {
+                limit = {
+                    is_subject_of = ROOT
+                }
+                save_temporary_scope_as = r_country
+                while = {
+                    limit = {
+                        any_neighbouring_state = {
+                            is_capital = no
+                            state_region = {
+                                NOR = {
+                                    is_homeland = cu:bengali
+                                    is_homeland = cu:bihari
+                                }
+                            }
+                            is_homeland_of_country_cultures = scope:r_country
+                            owner = ROOT
+                        }
+                    }
+                    every_neighbouring_state = {
+                        limit = {
+                            is_capital = no
+                            state_region = {
+                                NOR = {
+                                    is_homeland = cu:bengali
+                                    is_homeland = cu:bihari
+                                }
+                            }
+                            is_homeland_of_country_cultures = scope:r_country
+                            owner = ROOT
+                        }
+                        set_state_owner = scope:r_country
+                    }
+                }
+            }
+        }
+        # give remaining land to adjacent states.
+        market = {
+            every_scope_country = {
+                limit = {
+                    is_subject_of = ROOT
+                }
+                save_temporary_scope_as = r_country
+                while = {
+                    limit = {
+                        any_neighbouring_state = {
+                            is_capital = no
+                            state_region = {
+                                NOR = {
+                                    is_homeland = cu:bengali
+                                    is_homeland = cu:bihari
+                                }
+                            }
+                            owner = ROOT
+                        }
+                    }               
+                    every_neighbouring_state = {
+                        limit = {
+                            is_capital = no
+                            state_region = {
+                                NOR = {
+                                    is_homeland = cu:bengali
+                                    is_homeland = cu:bihari
+                                }
+                            }
+                            owner = ROOT
+                        }
+                        set_state_owner = scope:r_country
+                    }
+                }
+            }
+        }
+        # simulate the shutting down of treaty ports in the chaos.
+        every_subject_or_below = {
+            save_scope_as = test_scope
+            every_scope_state = {
+                state_region = {
+                    every_scope_state = {
+                        limit = {
+                            is_treaty_port = yes
+                        }
+                        set_state_owner = scope:test_scope
+                    }
+                }
+            }
+        }
+        every_scope_state = {
+            save_scope_as = test_scope
+            state_region = {
+                every_scope_state = {
+                    limit = {
+                        is_treaty_port = yes
+                    }
+                    set_state_owner = scope:test_scope
+                }
+            }
+        }
+        clear_saved_scope = test_scope
 
-		every_state = {
-			limit = {
-				OR = {
-					owner = ROOT
-					owner = { is_subject_of = ROOT }
-				}
-			}
-			state_region = {
-				set_variable = { 
-					name = former_bic_territory
-				}
-			}
-		}
+        every_state = {
+            limit = {
+                OR = {
+                    owner = ROOT
+                    owner = { is_subject_of = ROOT }
+                }
+            }
+            state_region = {
+                set_variable = { 
+                    name = former_bic_territory
+                }
+            }
+        }
 
-		custom_tooltip = {
-			text = india_princes_independent_tt
-			every_country = {
-				limit = {
-					is_subject_of = ROOT
-				}
-				make_independent = yes
-				add_technology_researched = mandatory_service
-				add_technology_researched = line_infantry
-				add_technology_researched = napoleonic_warfare
-				set_strategy = ai_strategy_unify_india
-			}
-		}
-		change_tag = BGL
-		hidden_effect = {
-			remove_primary_culture = cu:british
-			add_primary_culture = cu:bengali
-			set_state_religion = rel:sunni
-			ig:ig_devout = { 
-   				 set_interest_group_name = ig_sunni_madrasahs
-			}
-			every_scope_character = {
-				limit = {
-					OR = {
-						culture = cu:british
-						culture = cu:scottish
-					}
-				}
-				kill_character = yes
-			}
-			set_strategy = ai_strategy_unify_india
-		}
-	}
+        custom_tooltip = {
+            text = india_princes_independent_tt
+            every_country = {
+                limit = {
+                    is_subject_of = ROOT
+                }
+                make_independent = yes
+                add_technology_researched = mandatory_service
+                add_technology_researched = line_infantry
+                add_technology_researched = napoleonic_warfare
+                set_strategy = ai_strategy_unify_india
+            }
+        }
+        change_tag = BGL
+        hidden_effect = {
+            remove_primary_culture = cu:british
+            add_primary_culture = cu:bengali
+            set_state_religion = rel:sunni
+            ig:ig_devout = { 
+                 set_interest_group_name = ig_sunni_madrasahs
+            }
+            every_scope_character = {
+                limit = {
+                    OR = {
+                        culture = cu:british
+                        culture = cu:scottish
+                    }
+                }
+                kill_character = yes
+            }
+            set_strategy = ai_strategy_unify_india
+        }
+    }
 
-	option = {
-		name = bic_breakup.1.b
-		highlighted_option = yes
-		trigger = {
-			has_technology_researched = pan-nationalism
-		}
-		ai_chance = {
-			factor = 1 # this will be quite rare for the AI
-		}
-		change_tag = BHT
-		hidden_effect = {
-			remove_primary_culture = cu:british
-			add_primary_culture = cu:bengali
-			add_primary_culture = cu:assamese
-			add_primary_culture = cu:avadhi
-			add_primary_culture = cu:bihari
-			add_primary_culture = cu:gujarati
-			add_primary_culture = cu:kanauji
-			add_primary_culture = cu:kannada
-			add_primary_culture = cu:malayalam
-			add_primary_culture = cu:marathi
-			add_primary_culture = cu:oriya
-			add_primary_culture = cu:panjabi
-			add_primary_culture = cu:rajput
-			add_primary_culture = cu:sindi
-			add_primary_culture = cu:tamil
-			add_primary_culture = cu:telegu
-			set_state_religion = rel:hindu
-			set_strategy = ai_strategy_unify_india
-			every_scope_character = {
-				limit = {
-					culture = cu:british
-					culture = cu:scottish
-				}
-				kill_character = yes
-			}
-		}
-	}
-	option = {
-		name = bic_breakup.1.c
-		ai_chance = {
-			base = 0 # AI will never do this
-		}
-		default_option = yes
-		add_radicals = {
-			value = very_large_radicals
-		}
-	}
+    option = {
+        name = bic_breakup.1.b
+        highlighted_option = yes
+        trigger = {
+            has_technology_researched = pan-nationalism
+        }
+        ai_chance = {
+            factor = 1 # this will be quite rare for the AI
+        }
+        change_tag = BHT
+        hidden_effect = {
+            remove_primary_culture = cu:british
+            add_primary_culture = cu:bengali
+            add_primary_culture = cu:assamese
+            add_primary_culture = cu:avadhi
+            add_primary_culture = cu:bihari
+            add_primary_culture = cu:gujarati
+            add_primary_culture = cu:kanauji
+            add_primary_culture = cu:kannada
+            add_primary_culture = cu:malayalam
+            add_primary_culture = cu:marathi
+            add_primary_culture = cu:oriya
+            add_primary_culture = cu:panjabi
+            add_primary_culture = cu:rajput
+            add_primary_culture = cu:sindi
+            add_primary_culture = cu:tamil
+            add_primary_culture = cu:telegu
+            set_state_religion = rel:hindu
+            set_strategy = ai_strategy_unify_india
+            every_scope_character = {
+                limit = {
+                    culture = cu:british
+                    culture = cu:scottish
+                }
+                kill_character = yes
+            }
+        }
+    }
+    option = {
+        name = bic_breakup.1.c
+        ai_chance = {
+            base = 0 # AI will never do this
+        }
+        default_option = yes
+        add_radicals = {
+            value = very_large_radicals
+        }
+    }
 }
