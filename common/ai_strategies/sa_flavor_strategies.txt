@@ -5,8 +5,9 @@ ai_strategy_unify_india = {
 	type = diplomatic
 
 	ideological_opinion_effect_mult = 0.5
-	wanted_army_ratio = 150000 # 1 barrack per 150k incorporated population
+	wanted_army_ratio = 100000 # 1 barrack per 100k incorporated population
 	wanted_navy_ratio = 400000 # 1 naval base per 400k coastal incorporated population
+	desired_tax_level = high
 
 	possible = {
 		NOT = { exists = c:BHT }
@@ -14,6 +15,10 @@ ai_strategy_unify_india = {
 			has_discrimination_trait = south_asian_heritage
 		}
 		can_form_nation = BHT
+	}
+
+	wanted_construction_sector_levels = {
+		multiply = 10
 	}
 
 	aggression = {
