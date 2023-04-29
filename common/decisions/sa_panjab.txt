@@ -1,5 +1,4 @@
 ﻿je_fate_of_the_tribesmen = {
-	icon = "gfx/interface/icons/event_icons/event_military.dds"
 	is_shown = {
 		exists = c:PAN
 		c:PAN = ROOT
