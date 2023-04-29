@@ -168,13 +168,6 @@ ai_strategy_unify_india = {
 		}		
 	}
 
-	secret_goal_weights = {
-		conquer = 100
-		protect = 1
-		dominate = 1
-		reconcile = 1
-	}	
-
 	secret_goal_scores = {
 		conquer = {				
 			if = {
