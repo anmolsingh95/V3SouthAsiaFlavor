@@ -14,7 +14,6 @@
 		owns_entire_state_region = STATE_BALUCHISTAN
 	}
 	when_taken = {
-
 		set_variable = fate_of_the_tribesmen_taken
 		trigger_event = { id = pan_accomodation.1 }
 	}

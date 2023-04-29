@@ -173,6 +173,21 @@ bic_breakup.1 = {
 			}
 		}
 		clear_saved_scope = test_scope
+
+		every_state = {
+			limit = {
+				OR = {
+					owner = ROOT
+					owner = { is_subject_of = ROOT }
+				}
+			}
+			state_region = {
+				set_variable = { 
+					name = former_bic_territory
+				}
+			}
+		}
+
 		custom_tooltip = {
 			text = india_princes_independent_tt
 			every_country = {
@@ -183,12 +198,6 @@ bic_breakup.1 = {
 				add_technology_researched = mandatory_service
 				add_technology_researched = line_infantry
 				add_technology_researched = napoleonic_warfare
-				every_scope_state = {
-					add_to_global_variable_list = { 
-						name = former_bic_territories_list
-						target = this
-					}
-				}
 				set_strategy = ai_strategy_unify_india
 			}
 		}
@@ -208,12 +217,6 @@ bic_breakup.1 = {
 					}
 				}
 				kill_character = yes
-			}
-			every_scope_state = {
-				add_to_global_variable_list = { 
-					name = former_bic_territories_list
-					target = this
-				}
 			}
 			set_strategy = ai_strategy_unify_india
 		}
