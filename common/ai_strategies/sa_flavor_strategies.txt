@@ -9,6 +9,7 @@ ai_strategy_unify_india = {
 			exists = c:BIC
 		}
 		is_country_capital_former_bic_territory = yes
+		does_not_own_any_former_bic_territory = yes
 	}
 
 	wanted_army_ratio = {
