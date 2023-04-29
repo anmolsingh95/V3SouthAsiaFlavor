@@ -1,0 +1,16 @@
+﻿can_reach_target_country_by_land = {
+	has_diplomatic_relevance = scope:target_country
+	any_scope_state = {
+		any_neighbouring_state = {
+			owner = scope:target_country.owner
+		}
+	}
+	has_strategic_land_adjacency = scope:target_country
+}
+
+can_reach_target_state_by_land = {
+	has_diplomatic_relevance = scope:target_state.owner
+	any_neighbouring_state = {
+		owner = scope:target_country.owner
+	}
+}
