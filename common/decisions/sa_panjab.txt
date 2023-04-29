@@ -1,23 +1,23 @@
 ﻿je_fate_of_the_tribesmen = {
-	is_shown = {
-		exists = c:PAN
-		c:PAN = ROOT
-		NOT = { has_variable = fate_of_the_tribesmen_taken }
-	}
-	possible = {
-		is_at_war = no
-		is_subject = no
-		owns_entire_state_region = STATE_PUNJAB
-		owns_entire_state_region = STATE_KASHMIR
-		owns_entire_state_region = STATE_SINDH
-		owns_entire_state_region = STATE_PASHTUNISTAN
-		owns_entire_state_region = STATE_BALUCHISTAN
-	}
-	when_taken = {
-		set_variable = fate_of_the_tribesmen_taken
-		trigger_event = { id = pan_accomodation.1 }
-	}
-	ai_chance = {
-		base = 100
-	}
+    is_shown = {
+        exists = c:PAN
+        c:PAN = ROOT
+        NOT = { has_variable = fate_of_the_tribesmen_taken }
+    }
+    possible = {
+        is_at_war = no
+        is_subject = no
+        owns_entire_state_region = STATE_PUNJAB
+        owns_entire_state_region = STATE_KASHMIR
+        owns_entire_state_region = STATE_SINDH
+        owns_entire_state_region = STATE_PASHTUNISTAN
+        owns_entire_state_region = STATE_BALUCHISTAN
+    }
+    when_taken = {
+        set_variable = fate_of_the_tribesmen_taken
+        trigger_event = { id = pan_accomodation.1 }
+    }
+    ai_chance = {
+        base = 100
+    }
 }

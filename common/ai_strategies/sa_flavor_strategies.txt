@@ -1,140 +1,140 @@
 ﻿
 ai_strategy_unify_india = {
-	icon = "gfx/interface/icons/ai_strategy_icons/unification.dds"
-	type = diplomatic
-	desired_tax_level = very_high
+    icon = "gfx/interface/icons/ai_strategy_icons/unification.dds"
+    type = diplomatic
+    desired_tax_level = very_high
 
-	possible = {
-		NOT = {
-			exists = c:BIC
-		}
-		is_country_capital_former_bic_territory = yes
-		has_yet_to_unify_all_former_bic_territory = yes
-	}
+    possible = {
+        NOT = {
+            exists = c:BIC
+        }
+        is_country_capital_former_bic_territory = yes
+        has_yet_to_unify_all_former_bic_territory = yes
+    }
 
-	wanted_army_ratio = {
-		value = 100000
-	}
-	wanted_navy_ratio = {
-		value = 300000
-	}
-	wanted_construction_sector_levels = {
-		value = 100
-	}
+    wanted_army_ratio = {
+        value = 100000
+    }
+    wanted_navy_ratio = {
+        value = 300000
+    }
+    wanted_construction_sector_levels = {
+        value = 100
+    }
 
-	aggression = {
-		if = {
-			limit = {
-				is_target_country_capital_former_bic_territory = yes
-				can_reach_target_country_by_land = yes
-			}
-			add = 1000
-		}
-	}
+    aggression = {
+        if = {
+            limit = {
+                is_target_country_capital_former_bic_territory = yes
+                can_reach_target_country_by_land = yes
+            }
+            add = 1000
+        }
+    }
 
-	wargoal_scores = {
-		annex_country = {
-			if = {
-				limit = {
-	                OR = {
+    wargoal_scores = {
+        annex_country = {
+            if = {
+                limit = {
+                    OR = {
                         is_target_country_capital_former_bic_territory = yes
                         any_scope_state = {
                                 is_homeland_of_country_cultures = ROOT
                         }
-	                }
-	                can_reach_target_state_by_land = yes
+                    }
+                    can_reach_target_state_by_land = yes
                 }
- 				add = 1000
+                add = 1000
             }
         }
-		return_state = {
-			if = {
-				limit = {
-					can_reach_target_state_by_land = yes
-				}
-				add = 10000
-			}
-		}
-		conquer_state = {
-			if = {
-				limit = {
-					OR = {
-						is_target_state_former_bic_territory = yes
-						scope:target_state = {
-							is_homeland_of_country_cultures = ROOT
-						}
-					}
-					can_reach_target_state_by_land = yes
-				}
-				add = 1000
-			}
-		}
-		independence = {
-			add = 1000
-		}			
-		secession = {
-			add = 1000
-		}
-	}
+        return_state = {
+            if = {
+                limit = {
+                    can_reach_target_state_by_land = yes
+                }
+                add = 10000
+            }
+        }
+        conquer_state = {
+            if = {
+                limit = {
+                    OR = {
+                        is_target_state_former_bic_territory = yes
+                        scope:target_state = {
+                            is_homeland_of_country_cultures = ROOT
+                        }
+                    }
+                    can_reach_target_state_by_land = yes
+                }
+                add = 1000
+            }
+        }
+        independence = {
+            add = 1000
+        }
+        secession = {
+            add = 1000
+        }
+    }
 
-	secret_goal_scores = {
-		conquer = {	
-			add = 1000			
-			if = {
-				limit = {
-					OR = {
-						is_target_country_capital_former_bic_territory = yes	
-						any_scope_state = {
-							is_homeland_of_country_cultures = ROOT
-						}
-					}
-					can_reach_target_country_by_land = yes
-				}
-				add = 1000
-			}					
-		}	
-		befriend = {				
-			if = {
-				limit = {
-					OR = {
-						is_target_country_capital_former_bic_territory = yes	
-						any_scope_state = {
-							is_homeland_of_country_cultures = ROOT
-						}
-					}
-				}
-				multiply = 0
-			}				
-		}
-		reconcile = {				
-			if = {
-				limit = {
-					OR = {
-						is_target_country_capital_former_bic_territory = yes
-						any_scope_state = {
-							is_homeland_of_country_cultures = ROOT
-						}
-					}
-				}
-				multiply = 0
-			}				
-		}
-		protect = {				
-			if = {
-				limit = {
-					OR = {
-						is_target_country_capital_former_bic_territory = yes
-						any_scope_state = {
-							is_homeland_of_country_cultures = ROOT
-						}
-					}
-				}
-				multiply = 0
-			}			
-		}			
-	}	
+    secret_goal_scores = {
+        conquer = {
+            add = 1000
+            if = {
+                limit = {
+                    OR = {
+                        is_target_country_capital_former_bic_territory = yes
+                        any_scope_state = {
+                            is_homeland_of_country_cultures = ROOT
+                        }
+                    }
+                    can_reach_target_country_by_land = yes
+                }
+                add = 1000
+            }
+        }
+        befriend = {
+            if = {
+                limit = {
+                    OR = {
+                        is_target_country_capital_former_bic_territory = yes
+                        any_scope_state = {
+                            is_homeland_of_country_cultures = ROOT
+                        }
+                    }
+                }
+                multiply = 0
+            }
+        }
+        reconcile = {
+            if = {
+                limit = {
+                    OR = {
+                        is_target_country_capital_former_bic_territory = yes
+                        any_scope_state = {
+                            is_homeland_of_country_cultures = ROOT
+                        }
+                    }
+                }
+                multiply = 0
+            }
+        }
+        protect = {
+            if = {
+                limit = {
+                    OR = {
+                        is_target_country_capital_former_bic_territory = yes
+                        any_scope_state = {
+                            is_homeland_of_country_cultures = ROOT
+                        }
+                    }
+                }
+                multiply = 0
+            }
+        }
+    }
 
-	weight = {
-		add = 1000
-	}
+    weight = {
+        add = 1000
+    }
 }

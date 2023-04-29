@@ -1,45 +1,45 @@
 ﻿can_reach_target_country_by_land = {
-	has_diplomatic_relevance = scope:target_country
-	any_scope_state = {
-		any_neighbouring_state = {
-			owner = this.owner
-		}
-	}
-	has_strategic_land_adjacency = scope:target_country
+    has_diplomatic_relevance = scope:target_country
+    any_scope_state = {
+        any_neighbouring_state = {
+            owner = this.owner
+        }
+    }
+    has_strategic_land_adjacency = scope:target_country
 }
 
 can_reach_target_state_by_land = {
-	has_diplomatic_relevance = scope:target_state.owner
-	any_neighbouring_state = {
-		owner = this.owner
-	}
+    has_diplomatic_relevance = scope:target_state.owner
+    any_neighbouring_state = {
+        owner = this.owner
+    }
 }
 
 is_country_capital_former_bic_territory = {
-	ROOT.capital.state_region = {
-		has_variable = former_bic_territory
-	}
+    ROOT.capital.state_region = {
+        has_variable = former_bic_territory
+    }
 }
 
 has_yet_to_unify_all_former_bic_territory = {
-	any_state_region = {
-		has_variable = former_bic_territory
-		any_scope_state = {
-			NOT = {
-				owner = ROOT
-			}
-		}
-	}
+    any_state_region = {
+        has_variable = former_bic_territory
+        any_scope_state = {
+            NOT = {
+                owner = ROOT
+            }
+        }
+    }
 }
 
 is_target_country_capital_former_bic_territory = {
-	scope:target_country.capital.state_region = {
-		has_variable = former_bic_territory
-	}
+    scope:target_country.capital.state_region = {
+        has_variable = former_bic_territory
+    }
 }
 
 is_target_state_former_bic_territory = {
-	scope:target_state.state_region = {
-		has_variable = former_bic_territory
-	}	
+    scope:target_state.state_region = {
+        has_variable = former_bic_territory
+    }
 }
