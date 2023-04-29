@@ -1,0 +1,19 @@
+﻿on_monthly_pulse_country = {
+    effect = {
+        if = {
+            limit = {
+                market.mg:hardwood = {
+                    OR = {
+                        market_goods_has_goods_shortage = yes
+                        market_goods_pricier > 0.2
+                    }
+                }
+                has_building = building_logging_camp
+            }
+            activate_production_method = {
+                building_type = building_logging_camp
+                production_method = pm_hardwood
+            }
+        }
+    }
+}
