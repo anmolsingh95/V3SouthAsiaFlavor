@@ -183,9 +183,11 @@ bic_breakup.1 = {
 				add_technology_researched = mandatory_service
 				add_technology_researched = line_infantry
 				add_technology_researched = napoleonic_warfare
-				add_to_global_variable_list = { 
-					name = former_bic_subjects_list
-					target = this
+				every_scope_state = {
+					add_to_global_variable_list = { 
+						name = former_bic_territories_list
+						target = this
+					}
 				}
 				set_strategy = ai_strategy_unify_india
 			}
@@ -207,9 +209,11 @@ bic_breakup.1 = {
 				}
 				kill_character = yes
 			}
-			add_to_global_variable_list = { 
-				name = former_bic_subjects_list 
-				target = this
+			every_scope_state = {
+				add_to_global_variable_list = { 
+					name = former_bic_territories_list
+					target = this
+				}
 			}
 			set_strategy = ai_strategy_unify_india
 		}

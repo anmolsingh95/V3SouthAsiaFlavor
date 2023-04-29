@@ -15,26 +15,26 @@ can_reach_target_state_by_land = {
 	}
 }
 
-is_country_former_bic_subject = {
-	has_global_variable_list = former_bic_subjects_list
+is_country_capital_former_bic_territory = {
+	has_global_variable_list = former_bic_territories_list
 	is_target_in_global_variable_list = {
-		name = former_bic_subjects_list
-		target = ROOT
+		name = former_bic_territories_list
+		target = ROOT.capital
 	}
 }
 
-is_target_country_former_bic_subject = {
-	has_global_variable_list = former_bic_subjects_list
+is_target_country_capital_former_bic_territory = {
+	has_global_variable_list = former_bic_territories_list
 	is_target_in_global_variable_list = {
-		name = former_bic_subjects_list
-		target = scope:target_country
+		name = former_bic_territories_list
+		target = scope:target_country.capital
 	}
 }
 
-is_target_state_owner_former_bic_subject = {
-	has_global_variable_list = former_bic_subjects_list
+is_target_state_former_bic_territory = {
+	has_global_variable_list = former_bic_territories_list
 	is_target_in_global_variable_list = {
-		name = former_bic_subjects_list
-		target = scope:target_state.owner
+		name = former_bic_territories_list
+		target = scope:target_state
 	}
 }
