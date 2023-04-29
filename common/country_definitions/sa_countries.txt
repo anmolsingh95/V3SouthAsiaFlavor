@@ -1,5 +1,5 @@
 ﻿PAN = {
-	color = { 119  171  111}
+	color = { 182  201  54}
 	
 	country_type = unrecognized
 	
