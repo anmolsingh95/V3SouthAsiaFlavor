@@ -46,56 +46,30 @@ ai_strategy_unify_india = {
 		annex_country = {
 			if = {
 				limit = {
-					is_target_country_former_bic_subject = yes
+					OR = {
+						is_target_country_former_bic_subject = yes
+						any_scope_state = {
+							is_homeland_of_country_cultures = ROOT
+						}
+					}
 					can_reach_target_state_by_land = yes
 				}
 				add = 1000
 			}
-			if = {
-				limit = {
-					any_scope_state = {
-						is_homeland_of_country_cultures = ROOT
-					}
-					can_reach_target_country_by_land = yes
-				}
-				add = 1000
-			}	
 		}	
 		conquer_state = {
 			if = {
 				limit = {
-					is_target_state_owner_former_bic_subject = yes
-					can_reach_target_state_by_land = yes
-				}
-				add = 1000
-			}
-			if = {
-				limit = {
-					scope:target_state = {
-						is_homeland_of_country_cultures = ROOT
+					OR = {
+						is_target_state_owner_former_bic_subject = yes
+						scope:target_state = {
+							is_homeland_of_country_cultures = ROOT
+						}
 					}
 					can_reach_target_state_by_land = yes
 				}
 				add = 1000
 			}
-		}
-		take_treaty_port = {
-			if = {
-				limit = {
-					is_target_state_owner_former_bic_subject = yes
-					can_reach_target_state_by_land = yes
-				}
-				add = 1000
-			}
-			if = {
-				limit = {
-					scope:target_state = {
-						is_homeland_of_country_cultures = ROOT
-					}
-					can_reach_target_state_by_land = yes
-				}
-				add = 1000
-			}			
 		}
 		independence = {
 			value = 1000
@@ -109,31 +83,25 @@ ai_strategy_unify_india = {
 		conquer = {				
 			if = {
 				limit = {
-					is_target_country_former_bic_subject = yes
+					OR = {
+						is_target_country_former_bic_subject = yes	
+						any_scope_state = {
+							is_homeland_of_country_cultures = ROOT
+						}
+					}
 					can_reach_target_country_by_land = yes
 				}
 				add = 1000
-			}	
-			if = {
-				limit = {
-					any_scope_state = {
-						is_homeland_of_country_cultures = ROOT
-					}
-				}
-				add = 100
-			}				
+			}					
 		}	
 		befriend = {				
 			if = {
 				limit = {
-					is_target_country_former_bic_subject = yes
-				}
-				value = 0
-			}	
-			if = {
-				limit = {
-					any_scope_state = {
-						is_homeland_of_country_cultures = ROOT
+					OR = {
+						is_target_country_former_bic_subject = yes	
+						any_scope_state = {
+							is_homeland_of_country_cultures = ROOT
+						}
 					}
 				}
 				value = 0
@@ -142,14 +110,11 @@ ai_strategy_unify_india = {
 		reconcile = {				
 			if = {
 				limit = {
-					is_target_country_former_bic_subject = yes
-				}
-				value = 0
-			}	
-			if = {
-				limit = {
-					any_scope_state = {
-						is_homeland_of_country_cultures = ROOT
+					OR = {
+						is_target_country_former_bic_subject = yes
+						any_scope_state = {
+							is_homeland_of_country_cultures = ROOT
+						}
 					}
 				}
 				value = 0
@@ -158,18 +123,15 @@ ai_strategy_unify_india = {
 		protect = {				
 			if = {
 				limit = {
-					is_target_country_former_bic_subject = yes
-				}
-				value = 0
-			}	
-			if = {
-				limit = {
-					any_scope_state = {
-						is_homeland_of_country_cultures = ROOT
+					OR = {
+						is_target_country_former_bic_subject = yes
+						any_scope_state = {
+							is_homeland_of_country_cultures = ROOT
+						}
 					}
 				}
 				value = 0
-			}				
+			}			
 		}			
 	}	
 
