@@ -25,7 +25,11 @@ has_yet_to_unify_all_former_bic_territory = {
 	any_state_region = {
 		has_variable = former_bic_territory
 		NOT = {
-			owner = ROOT
+			any_scope_state = {
+				NOT = {
+					owner = ROOT
+				}
+			}
 		}
 	}
 }

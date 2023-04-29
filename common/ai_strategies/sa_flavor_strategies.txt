@@ -28,7 +28,7 @@ ai_strategy_unify_india = {
 				is_target_country_capital_former_bic_territory = yes
 				can_reach_target_country_by_land = yes
 			}
-			value = 1000
+			add = 1000
 		}
 	}
 
@@ -44,7 +44,7 @@ ai_strategy_unify_india = {
 	                }
 	                can_reach_target_state_by_land = yes
                 }
-                value = 1000
+ 				add = 1000
             }
         }
 		return_state = {
@@ -52,7 +52,7 @@ ai_strategy_unify_india = {
 				limit = {
 					can_reach_target_state_by_land = yes
 				}
-				value = 10000
+				add = 10000
 			}
 		}
 		conquer_state = {
@@ -66,19 +66,20 @@ ai_strategy_unify_india = {
 					}
 					can_reach_target_state_by_land = yes
 				}
-				value = 1000
+				add = 1000
 			}
 		}
 		independence = {
-			value = 1000
+			add = 1000
 		}			
 		secession = {
-			value = 1000
+			add = 1000
 		}
 	}
 
 	secret_goal_scores = {
-		conquer = {				
+		conquer = {	
+			add = 1000			
 			if = {
 				limit = {
 					OR = {
@@ -89,7 +90,7 @@ ai_strategy_unify_india = {
 					}
 					can_reach_target_country_by_land = yes
 				}
-				value = 1000
+				add = 1000
 			}					
 		}	
 		befriend = {				
@@ -102,7 +103,7 @@ ai_strategy_unify_india = {
 						}
 					}
 				}
-				value = 0
+				multiply = 0
 			}				
 		}
 		reconcile = {				
@@ -115,7 +116,7 @@ ai_strategy_unify_india = {
 						}
 					}
 				}
-				value = 0
+				multiply = 0
 			}				
 		}
 		protect = {				
@@ -128,12 +129,12 @@ ai_strategy_unify_india = {
 						}
 					}
 				}
-				value = 0
+				multiply = 0
 			}			
 		}			
 	}	
 
 	weight = {
-		value = 10000
+		add = 1000
 	}
 }
