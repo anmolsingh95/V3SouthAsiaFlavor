@@ -161,6 +161,7 @@ bic_breakup.1 = {
 			clear_saved_scope = test_scope
 		}
 		every_scope_state = {
+			save_scope_as = test_scope
 			state_region = {
 				every_scope_state = {
 					limit = {
