@@ -8,11 +8,10 @@ ai_strategy_unify_india = {
 	desired_tax_level = very_high
 
 	possible = {
-		NOT = { exists = c:BHT }
-		any_primary_culture = {
-			has_discrimination_trait = south_asian_heritage
+		NOT = {
+			exists = c:BIC
 		}
-		can_form_nation = BHT
+		is_country_former_bic_subject = yes
 	}
 
 	wanted_army_ratio = {
@@ -28,25 +27,7 @@ ai_strategy_unify_india = {
 	aggression = {
 		if = {
 			limit = {
-				scope:target_country = {
-					any_scope_state = {
-						OR = {
-							region = sr:region_north_india
-							region = sr:region_south_india
-							AND = {
-								region = sr:region_himalayas
-								state_region = s:STATE_KASHMIR
-							}
-							AND = {
-								region = sr:region_persia
-								OR = {
-									state_region = s:STATE_BALUCHISTAN
-									state_region = s:STATE_PASHTUNISTAN
-								}
-							}	
-						}
-					}
-				}
+				is_target_country_former_bic_subject = yes
 				can_reach_target_country_by_land = yes
 			}
 			add = 1000
@@ -57,9 +38,6 @@ ai_strategy_unify_india = {
 		return_state = {
 			if = {
 				limit = {
-					scope:target_state = {
-						is_homeland_of_country_cultures = ROOT
-					}
 					can_reach_target_state_by_land = yes
 				}
 				add = 10000
@@ -68,25 +46,7 @@ ai_strategy_unify_india = {
 		annex_country = {
 			if = {
 				limit = {
-					scope:target_country = {
-						any_scope_state = {
-							OR = {
-								region = sr:region_north_india
-								region = sr:region_south_india
-								AND = {
-									region = sr:region_himalayas
-									state_region = s:STATE_KASHMIR
-								}
-								AND = {
-									region = sr:region_persia
-									OR = {
-										state_region = s:STATE_BALUCHISTAN
-										state_region = s:STATE_PASHTUNISTAN
-									}
-								}	
-							}
-						}
-					}
+					is_target_country_former_bic_subject = yes
 					can_reach_target_state_by_land = yes
 				}
 				add = 1000
@@ -104,23 +64,7 @@ ai_strategy_unify_india = {
 		conquer_state = {
 			if = {
 				limit = {
-					scope:target_state = {
-						OR = {
-							region = sr:region_north_india
-							region = sr:region_south_india
-							AND = {
-								region = sr:region_himalayas
-								state_region = s:STATE_KASHMIR
-							}
-							AND = {
-								region = sr:region_persia
-								OR = {
-									state_region = s:STATE_BALUCHISTAN
-									state_region = s:STATE_PASHTUNISTAN
-								}
-							}	
-						}
-					}
+					is_target_state_owner_former_bic_subject = yes
 					can_reach_target_state_by_land = yes
 				}
 				add = 1000
@@ -138,23 +82,7 @@ ai_strategy_unify_india = {
 		take_treaty_port = {
 			if = {
 				limit = {
-					scope:target_state = {
-						OR = {
-							region = sr:region_north_india
-							region = sr:region_south_india
-							AND = {
-								region = sr:region_himalayas
-								state_region = s:STATE_KASHMIR
-							}
-							AND = {
-								region = sr:region_persia
-								OR = {
-									state_region = s:STATE_BALUCHISTAN
-									state_region = s:STATE_PASHTUNISTAN
-								}
-							}	
-						}
-					}
+					is_target_state_owner_former_bic_subject = yes
 					can_reach_target_state_by_land = yes
 				}
 				add = 1000
@@ -181,25 +109,8 @@ ai_strategy_unify_india = {
 		conquer = {				
 			if = {
 				limit = {
-					scope:target_country = {
-						any_scope_state = {
-							OR = {
-								region = sr:region_north_india
-								region = sr:region_south_india
-								AND = {
-									region = sr:region_himalayas
-									state_region = s:STATE_KASHMIR
-								}
-								AND = {
-									region = sr:region_persia
-									OR = {
-										state_region = s:STATE_BALUCHISTAN
-										state_region = s:STATE_PASHTUNISTAN
-									}
-								}	
-							}
-						}
-					}
+					is_target_country_former_bic_subject = yes
+					can_reach_target_country_by_land = yes
 				}
 				add = 1000
 			}	
@@ -209,31 +120,13 @@ ai_strategy_unify_india = {
 						is_homeland_of_country_cultures = ROOT
 					}
 				}
-				add = 1000
+				add = 100
 			}				
 		}	
 		befriend = {				
 			if = {
 				limit = {
-					scope:target_country = {
-						any_scope_state = {
-							OR = {
-								region = sr:region_north_india
-								region = sr:region_south_india
-								AND = {
-									region = sr:region_himalayas
-									state_region = s:STATE_KASHMIR
-								}
-								AND = {
-									region = sr:region_persia
-									OR = {
-										state_region = s:STATE_BALUCHISTAN
-										state_region = s:STATE_PASHTUNISTAN
-									}
-								}	
-							}
-						}
-					}
+					is_target_country_former_bic_subject = yes
 				}
 				value = 0
 			}	
@@ -249,25 +142,7 @@ ai_strategy_unify_india = {
 		reconcile = {				
 			if = {
 				limit = {
-					scope:target_country = {
-						any_scope_state = {
-							OR = {
-								region = sr:region_north_india
-								region = sr:region_south_india
-								AND = {
-									region = sr:region_himalayas
-									state_region = s:STATE_KASHMIR
-								}
-								AND = {
-									region = sr:region_persia
-									OR = {
-										state_region = s:STATE_BALUCHISTAN
-										state_region = s:STATE_PASHTUNISTAN
-									}
-								}	
-							}
-						}
-					}
+					is_target_country_former_bic_subject = yes
 				}
 				value = 0
 			}	
@@ -283,25 +158,7 @@ ai_strategy_unify_india = {
 		protect = {				
 			if = {
 				limit = {
-					scope:target_country = {
-						any_scope_state = {
-							OR = {
-								region = sr:region_north_india
-								region = sr:region_south_india
-								AND = {
-									region = sr:region_himalayas
-									state_region = s:STATE_KASHMIR
-								}
-								AND = {
-									region = sr:region_persia
-									OR = {
-										state_region = s:STATE_BALUCHISTAN
-										state_region = s:STATE_PASHTUNISTAN
-									}
-								}	
-							}
-						}
-					}
+					is_target_country_former_bic_subject = yes
 				}
 				value = 0
 			}	
@@ -318,11 +175,5 @@ ai_strategy_unify_india = {
 
 	weight = {
 		value = 1000
-		if = {
-			limit = {
-				is_subject_of = c:BIC
-			}
-			value = 0
-		}	
 	}
 }
