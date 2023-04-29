@@ -182,23 +182,9 @@ bic_breakup.1 = {
 				}
 			}
 			state_region = {
-				#if = {
-				#	limit = {
-				#		has_variable = former_bic_territory
-				#	}
-				#	debug_log_scopes = no
-				#	debug_log = "has variable former bic territory before setting"
-				#}
 				set_variable = { 
 					name = former_bic_territory
 				}
-				#if = {
-				#	limit = {
-				#		has_variable = former_bic_territory
-				#	}
-				#	debug_log_scopes = no
-				#	debug_log = "has variable former bic territory after setting"
-				#}
 			}
 		}
 
