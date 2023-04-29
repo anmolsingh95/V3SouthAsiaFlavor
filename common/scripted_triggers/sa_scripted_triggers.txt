@@ -5,7 +5,6 @@
             owner = this.owner
         }
     }
-    has_strategic_land_adjacency = scope:target_country
 }
 
 can_reach_target_state_by_land = {
