@@ -79,34 +79,32 @@ bic_breakup.1 = {
 				save_temporary_scope_as = r_country
 				while = {
 					limit = {
-						any_scope_state = {
-							any_neighbouring_state = {
-								is_capital = no
-								NOT = {
-									state_region = {
-										is_homeland = cu:bengali
-										is_homeland = cu:bihari
-									}
-								}
-								is_homeland_of_country_cultures = scope:r_country
-								owner = ROOT
-							}
-						}
-					}
-				}
-				every_neighbouring_state = {
-					limit = {
-						is_capital = no
-						NOT = {
+						any_neighbouring_state = {
+							is_capital = no
 							state_region = {
-								is_homeland = cu:bengali
-								is_homeland = cu:bihari
+							 	NOR = {
+									is_homeland = cu:bengali
+									is_homeland = cu:bihari
+							 	}
 							}
+							is_homeland_of_country_cultures = scope:r_country
+							owner = ROOT
 						}
-						is_homeland_of_country_cultures = scope:r_country
-						owner = ROOT
 					}
-					set_state_owner = scope:r_country
+					every_neighbouring_state = {
+						limit = {
+							is_capital = no
+							state_region = {
+							 	NOR = {
+									is_homeland = cu:bengali
+									is_homeland = cu:bihari
+							 	}
+							}
+							is_homeland_of_country_cultures = scope:r_country
+							owner = ROOT
+						}
+						set_state_owner = scope:r_country
+					}
 				}
 			}
 		}
@@ -116,32 +114,30 @@ bic_breakup.1 = {
 				save_temporary_scope_as = r_country
 				while = {
 					limit = {
-						any_scope_state = {
-							any_neighbouring_state = {
-								is_capital = no
-								NOT = {
-									state_region = {
-										is_homeland = cu:bengali
-										is_homeland = cu:bihari
-									}
-								}
-								owner = ROOT
-							}
-						}
-					}
-				}
-				every_neighbouring_state = {
-					limit = {
-						is_capital = no
-						NOT = {
+						any_neighbouring_state = {
+							is_capital = no
 							state_region = {
-								is_homeland = cu:bengali
-								is_homeland = cu:bihari
+							 	NOR = {
+									is_homeland = cu:bengali
+									is_homeland = cu:bihari
+							 	}
 							}
+							owner = ROOT
 						}
-						owner = ROOT
+					}				
+					every_neighbouring_state = {
+						limit = {
+							is_capital = no
+							state_region = {
+							 	NOR = {
+									is_homeland = cu:bengali
+									is_homeland = cu:bihari
+							 	}
+							}
+							owner = ROOT
+						}
+						set_state_owner = scope:r_country
 					}
-					set_state_owner = scope:r_country
 				}
 			}
 		}
@@ -170,6 +166,7 @@ bic_breakup.1 = {
 					set_state_owner = scope:test_scope
 				}
 			}
+			clear_saved_scope = test_scope
 		}
 		clear_saved_scope = test_scope
 		custom_tooltip = {
