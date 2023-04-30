@@ -23,7 +23,11 @@ pan_accomodation.1 = {
     trigger = {
         exists = c:PAN
         this = c:PAN
-        owns_entire_state_region = STATE_PUNJAB
+        s:STATE_PUNJAB = {
+            any_scope_state = {
+                owner = ROOT
+            }
+        }
         owns_entire_state_region = STATE_KASHMIR
         owns_entire_state_region = STATE_BALUCHISTAN
         owns_entire_state_region = STATE_PASHTUNISTAN
@@ -39,7 +43,7 @@ pan_accomodation.1 = {
         add_primary_culture = cu:pashtun
         add_loyalists = {
             culture = cu:pashtun
-            value = medium_radicals
+            value = very_large_radicals
         }
         add_radicals = {
             culture = cu:panjabi
