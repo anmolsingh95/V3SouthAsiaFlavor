@@ -130,7 +130,6 @@ ai_strategy_unify_india = {
                 }
                 multiply = 0.0
             }
-            multiply = 0.0
         }
     }
 
