@@ -25,7 +25,7 @@ ai_strategy_unify_india = {
     aggression = {
         if = {
             limit = {
-                is_target_country_capital_former_bic_territory = yes
+                any_state_in_target_country_former_bic_territory = yes
                 can_reach_target_country_by_land = yes
             }
             add = 1000
@@ -79,7 +79,6 @@ ai_strategy_unify_india = {
 
     secret_goal_scores = {
         conquer = {
-            add = 1000
             if = {
                 limit = {
                     OR = {

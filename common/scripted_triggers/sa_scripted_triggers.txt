@@ -37,6 +37,16 @@ is_target_country_capital_former_bic_territory = {
     }
 }
 
+any_state_in_target_country_former_bic_territory = {
+    scope:target_country = {
+        any_scope_state = {
+            state_region = {
+                has_variable = former_bic_territory
+            }
+        }
+    }
+}
+
 is_target_state_former_bic_territory = {
     scope:target_state.state_region = {
         has_variable = former_bic_territory
