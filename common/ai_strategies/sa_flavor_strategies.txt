@@ -2,7 +2,6 @@
 ai_strategy_unify_india = {
     icon = "gfx/interface/icons/ai_strategy_icons/unification.dds"
     type = diplomatic
-    desired_tax_level = very_high
 
     possible = {
         NOT = {
@@ -13,13 +12,11 @@ ai_strategy_unify_india = {
     }
 
     wanted_army_ratio = {
-        value = 100000
+        value = 150000
     }
+
     wanted_navy_ratio = {
-        value = 300000
-    }
-    wanted_construction_sector_levels = {
-        value = 100
+        value = 400000
     }
 
     aggression = {
@@ -28,7 +25,7 @@ ai_strategy_unify_india = {
                 any_state_in_target_country_former_bic_territory = yes
                 can_reach_target_country_by_land = yes
             }
-            add = 1000
+            add = 10000
         }
     }
 
@@ -44,7 +41,7 @@ ai_strategy_unify_india = {
                     }
                     can_reach_target_state_by_land = yes
                 }
-                add = 1000
+                add = 10000
             }
         }
         return_state = {
@@ -52,7 +49,7 @@ ai_strategy_unify_india = {
                 limit = {
                     can_reach_target_state_by_land = yes
                 }
-                add = 10000
+                add = 100000
             }
         }
         conquer_state = {
@@ -66,14 +63,14 @@ ai_strategy_unify_india = {
                     }
                     can_reach_target_state_by_land = yes
                 }
-                add = 1000
+                add = 10000
             }
         }
         independence = {
-            add = 1000
+            add = 10000
         }
         secession = {
-            add = 1000
+            add = 10000
         }
     }
 
@@ -89,7 +86,7 @@ ai_strategy_unify_india = {
                     }
                     can_reach_target_country_by_land = yes
                 }
-                add = 1000
+                add = 10000
             }
         }
         befriend = {
