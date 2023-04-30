@@ -29,6 +29,15 @@ ai_strategy_unify_india = {
         }
     }
 
+    strategic_region_scores = {
+        region_north_india = {
+            add = 1000
+        }
+        region_south_india = {
+            add = 1000
+        }
+    }
+
     wargoal_scores = {
         annex_country = {
             if = {
