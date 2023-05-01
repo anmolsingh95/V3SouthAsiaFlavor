@@ -9,6 +9,7 @@
                     }
                 }
                 has_building = building_logging_camp
+                is_ai = yes
             }
             activate_production_method = {
                 building_type = building_logging_camp
