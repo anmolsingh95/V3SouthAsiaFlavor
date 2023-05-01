@@ -87,7 +87,6 @@ bic_breakup.1 = {
                             state_region = {
                                 NOR = {
                                     is_homeland = cu:bengali
-                                    is_homeland = cu:bihari
                                 }
                             }
                             is_homeland_of_country_cultures = scope:r_country
@@ -100,7 +99,6 @@ bic_breakup.1 = {
                             state_region = {
                                 NOR = {
                                     is_homeland = cu:bengali
-                                    is_homeland = cu:bihari
                                 }
                             }
                             is_homeland_of_country_cultures = scope:r_country
@@ -125,7 +123,6 @@ bic_breakup.1 = {
                             state_region = {
                                 NOR = {
                                     is_homeland = cu:bengali
-                                    is_homeland = cu:bihari
                                 }
                             }
                             owner = ROOT
@@ -137,7 +134,6 @@ bic_breakup.1 = {
                             state_region = {
                                 NOR = {
                                     is_homeland = cu:bengali
-                                    is_homeland = cu:bihari
                                 }
                             }
                             owner = ROOT
