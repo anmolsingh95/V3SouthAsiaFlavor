@@ -78,6 +78,10 @@ bic_breakup.1 = {
             every_scope_country = {
                 limit = {
                     is_subject_of = ROOT
+                    # nothing against mysore, but their ai sucks
+                    NOT = {
+                        this = c:MYS
+                    }
                 }
                 save_temporary_scope_as = r_country
                 while = {
@@ -114,6 +118,10 @@ bic_breakup.1 = {
             every_scope_country = {
                 limit = {
                     is_subject_of = ROOT
+                    # nothing against mysore, but their ai sucks
+                    NOT = {
+                        this = c:MYS
+                    }
                 }
                 save_temporary_scope_as = r_country
                 while = {
