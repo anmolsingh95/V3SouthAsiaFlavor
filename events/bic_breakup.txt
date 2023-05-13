@@ -172,7 +172,7 @@ bic_breakup.1 = {
                     limit = {
                         is_treaty_port = yes
                     }
-                    set_state_owner = scope:test_scope
+                    set_state_owner = ROOT
                 }
             }
         }

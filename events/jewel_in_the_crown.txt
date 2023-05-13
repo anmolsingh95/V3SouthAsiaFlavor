@@ -68,7 +68,6 @@ raj.1 = {
         }
         c:BIC = {
             set_variable = doctrine_of_lapse_ended
-            custom_tooltip = doctrine_of_lapse_disabled
             if = {
                 limit = {
                     NOT = {
