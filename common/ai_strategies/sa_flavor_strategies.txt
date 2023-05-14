@@ -42,10 +42,10 @@ ai_strategy_unify_india = {
         annex_country = {
             if = {
                 limit = {
-                    OR = {
-                        is_target_country_capital_former_bic_territory = yes
-                        any_state_in_target_country_former_bic_territory = yes
+                    NOT = {
+                        is_subject_of = scope:target_state
                     }
+                    any_state_in_target_country_former_bic_territory = yes
                     can_reach_target_state_by_land = yes
                 }
                 add = 1000
@@ -54,6 +54,9 @@ ai_strategy_unify_india = {
         return_state = {
             if = {
                 limit = {
+                    NOT = {
+                        is_subject_of = scope:target_state
+                    }
                     can_reach_target_state_by_land = yes
                 }
                 add = 1000
@@ -62,8 +65,10 @@ ai_strategy_unify_india = {
         conquer_state = {
             if = {
                 limit = {
+                    NOT = {
+                        is_subject_of = scope:target_state
+                    }
                     OR = {
-                        is_target_state_former_bic_territory = yes
                         any_state_in_target_country_former_bic_territory = yes
                     }
                     can_reach_target_state_by_land = yes
@@ -83,8 +88,10 @@ ai_strategy_unify_india = {
         conquer = {
             if = {
                 limit = {
+                    NOT = {
+                        is_subject_of = scope:target_state
+                    }
                     OR = {
-                        is_target_country_capital_former_bic_territory = yes
                         any_state_in_target_country_former_bic_territory = yes
                     }
                     can_reach_target_country_by_land = yes
