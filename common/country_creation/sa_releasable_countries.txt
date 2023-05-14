@@ -22,6 +22,22 @@ AWA = {
     ai_will_do = { always = no }
 }
 
+MYS = {
+    states = {
+        STATE_MYSORE
+        STATE_MADRAS
+    }
+    ai_will_do = { always = no }
+}
+
+BAS = {
+    provinces = { x8ECE82 x013159 xF09DA1 x1170A0 xB56E8E x2F70FB x274E94 x66F24C x20BC2C xC38F66 }
+    states = {
+        STATE_CIRCARS
+    }
+    ai_will_do = { always = no }
+}
+
 NAG = {
     states = {
         STATE_NAGPUR

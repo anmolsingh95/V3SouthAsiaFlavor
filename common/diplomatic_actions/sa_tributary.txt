@@ -308,8 +308,8 @@
                             army_size > scope:target_country.army_size
                             country_rank > scope:target_country.country_rank
                             OR = {
-                                scope:actor.country_rank > this.country_rank
-                                scope:actor.army_size > this.army_size
+                                scope:actor.country_rank >= this.country_rank
+                                scope:actor.army_size >= this.army_size
                             }
                         }
                     }
