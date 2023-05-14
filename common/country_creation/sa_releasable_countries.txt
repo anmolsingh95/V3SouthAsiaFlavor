@@ -26,13 +26,14 @@ MYS = {
     states = {
         STATE_MYSORE
         STATE_MADRAS
+        STATE_TRAVANCORE
     }
     ai_will_do = { always = no }
 }
 
-BAS = {
+HYD = {
     states = {
-        STATE_NAGPUR
+        STATE_HYDERABAD
         STATE_CIRCARS
     }
     ai_will_do = { always = no }
