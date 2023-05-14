@@ -288,6 +288,36 @@
             }
 
             add = {
+                desc = "DIPLOMATIC_ACCEPTANCE_UNDER_THREAT"
+                if = {
+                    limit = {
+                        any_country = {
+                            NOT = {
+                                this = scope:actor
+                            }
+                            OR = {
+                                has_attitude = {
+                                    who = scope:target_country
+                                    attitude = belligerent
+                                }
+                                has_attitude = {
+                                    who = scope:target_country
+                                    attitude = domineering
+                                }
+                            }
+                            army_size > scope:target_country.army_size
+                            country_rank > scope:target_country.country_rank
+                            OR = {
+                                scope:actor.country_rank > this.country_rank
+                                scope:actor.army_size > this.army_size
+                            }
+                        }
+                    }
+                    value = 60
+                }
+            }
+
+            add = {
                 desc = "DIPLOMATIC_ACCEPTANCE_RELATIONS"
                 if = {
                     limit = {
