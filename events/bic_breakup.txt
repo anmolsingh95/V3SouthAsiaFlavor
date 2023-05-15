@@ -203,26 +203,6 @@ bic_breakup.1 = {
                     }
                 }
             }
-            # create assam if it does not exist
-            if = {
-                limit = {
-                    exists = s:STATE_ASSAM.region_state:BIC
-                    NOT = { exists = c:ASM }
-                }
-                create_country = {
-                    tag = ASM
-                    origin = this
-                    state = s:STATE_ASSAM.region_state:BIC
-                    on_created = {
-                        c:BIC  = {
-                            create_diplomatic_pact = {
-                                country = c:ASM
-                                type = puppet
-                            }
-                        }
-                    }
-                }
-            }
 
             # give land to homeland culture accepted states.
             market = {
