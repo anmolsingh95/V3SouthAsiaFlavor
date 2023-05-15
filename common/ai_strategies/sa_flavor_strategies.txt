@@ -105,11 +105,9 @@ ai_strategy_unify_india = {
                 multiply = 0.0
             }
         }
-
-        }
     }
 
     weight = {
-        add = 1000
+        value = 1000
     }
 }
