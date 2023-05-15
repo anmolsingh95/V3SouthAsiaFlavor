@@ -42,142 +42,119 @@ bic_breakup.1 = {
         ai_chance = {
             base = 8 # this is the default pick for the AI
         }
-        # first give back the split states
-        every_scope_state = {
-            limit = {
-                is_split_state = yes
-
-            }
-            state_region = {
-                every_scope_state = {
-                    owner =  {
-                        if = {
-                            limit = {
-                                any_primary_culture = {
-                                    OR = {
-                                        has_discrimination_trait = south_asian_heritage
-                                        has_discrimination_trait = southeast_asian_heritage
-                                    }
-                                }
-                            }
-                            save_scope_as = test_scope
-                        }
-                    }
-                }
-            }
-            if = {
-                limit = {
-                    exists = scope:test_scope
-                }
-                set_state_owner = scope:test_scope
-                clear_saved_scope = test_scope
-            }
-        }
-        # first give land to homeland culture accepted states.
-        market = {
-            every_scope_country = {
-                limit = {
-                    is_subject_of = ROOT
-                    # nothing against mysore, but their ai sucks
-                    NOT = {
-                        this = c:MYS
-                    }
-                }
-                save_temporary_scope_as = r_country
-                while = {
-                    limit = {
-                        any_neighbouring_state = {
-                            is_capital = no
-                            state_region = {
-                                NOR = {
-                                    is_homeland = cu:bengali
-                                }
-                            }
-                            is_homeland_of_country_cultures = scope:r_country
-                            owner = ROOT
-                        }
-                    }
-                    every_neighbouring_state = {
-                        limit = {
-                            is_capital = no
-                            state_region = {
-                                NOR = {
-                                    is_homeland = cu:bengali
-                                }
-                            }
-                            is_homeland_of_country_cultures = scope:r_country
-                            owner = ROOT
-                        }
-                        set_state_owner = scope:r_country
-                    }
-                }
-            }
-        }
-        # give remaining land to adjacent states.
-        market = {
-            every_scope_country = {
-                limit = {
-                    is_subject_of = ROOT
-                    # nothing against mysore, but their ai sucks
-                    NOT = {
-                        this = c:MYS
-                    }
-                }
-                save_temporary_scope_as = r_country
-                while = {
-                    limit = {
-                        any_neighbouring_state = {
-                            is_capital = no
-                            state_region = {
-                                NOR = {
-                                    is_homeland = cu:bengali
-                                }
-                            }
-                            owner = ROOT
-                        }
-                    }               
-                    every_neighbouring_state = {
-                        limit = {
-                            is_capital = no
-                            state_region = {
-                                NOR = {
-                                    is_homeland = cu:bengali
-                                }
-                            }
-                            owner = ROOT
-                        }
-                        set_state_owner = scope:r_country
-                    }
-                }
-            }
-        }
-        # simulate the shutting down of treaty ports in the chaos.
-        every_subject_or_below = {
-            save_scope_as = test_scope
+        hidden_effect = {
+            # first give back the split states
             every_scope_state = {
+                limit = {
+                    is_split_state = yes
+
+                }
                 state_region = {
                     every_scope_state = {
-                        limit = {
-                            is_treaty_port = yes
+                        owner =  {
+                            if = {
+                                limit = {
+                                    any_primary_culture = {
+                                        OR = {
+                                            has_discrimination_trait = south_asian_heritage
+                                            has_discrimination_trait = southeast_asian_heritage
+                                        }
+                                    }
+                                }
+                                save_scope_as = test_scope
+                            }
                         }
-                        set_state_owner = scope:test_scope
                     }
                 }
-            }
-        }
-        every_scope_state = {
-            save_scope_as = test_scope
-            state_region = {
-                every_scope_state = {
+                if = {
                     limit = {
-                        is_treaty_port = yes
+                        exists = scope:test_scope
                     }
-                    set_state_owner = ROOT
+                    set_state_owner = scope:test_scope
+                    clear_saved_scope = test_scope
+                }
+            }
+            # give land to homeland culture accepted states.
+            market = {
+                every_scope_country = {
+                    limit = {
+                        is_subject_of = ROOT
+                        # nothing against mysore, but their ai sucks
+                        NOT = {
+                            this = c:MYS
+                        }
+                    }
+                    save_temporary_scope_as = r_country
+                    while = {
+                        limit = {
+                            any_neighbouring_state = {
+                                is_capital = no
+                                state_region = {
+                                    NOR = {
+                                        is_homeland = cu:bengali
+                                    }
+                                }
+                                is_homeland_of_country_cultures = scope:r_country
+                                owner = ROOT
+                            }
+                        }
+                        every_neighbouring_state = {
+                            limit = {
+                                is_capital = no
+                                state_region = {
+                                    NOR = {
+                                        is_homeland = cu:bengali
+                                    }
+                                }
+                                is_homeland_of_country_cultures = scope:r_country
+                                owner = ROOT
+                            }
+                            set_state_owner = scope:r_country
+                        }
+                    }
+                }
+            }
+            # give remaining land to adjacent states.
+            market = {
+                every_scope_country = {
+                    limit = {
+                        is_subject_of = ROOT
+                        # nothing against mysore, but their ai sucks
+                        NOT = {
+                            this = c:MYS
+                        }
+                    }
+                    save_temporary_scope_as = r_country
+                    while = {
+                        limit = {
+                            any_neighbouring_state = {
+                                is_capital = no
+                                state_region = {
+                                    NOR = {
+                                        is_homeland = cu:bengali
+                                    }
+                                }
+                                owner = ROOT
+                            }
+                        }
+                        every_neighbouring_state = {
+                            limit = {
+                                is_capital = no
+                                state_region = {
+                                    NOR = {
+                                        is_homeland = cu:bengali
+                                    }
+                                }
+                                owner = ROOT
+                            }
+                            set_state_owner = scope:r_country
+                        }
+                    }
                 }
             }
         }
-        clear_saved_scope = test_scope
 
+        clear_saved_scope = test_scope
         every_state = {
             limit = {
                 OR = {
