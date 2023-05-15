@@ -74,13 +74,13 @@ ai_strategy_unify_india = {
                     can_reach_target_state_by_land = yes
                 }
                 add = 1000
+                if = {
+                    limit = {
+                        is_subject_of = scope:target_country
+                    }
+                    multiply = 0.0
+                }
             }
-        }
-        independence = {
-            add = 10000
-        }
-        secession = {
-            add = 10000
         }
     }
 
@@ -98,6 +98,14 @@ ai_strategy_unify_india = {
                 }
                 add = 1000
             }
+            if = {
+                limit = {
+                    is_subject_of = scope:target_country
+                }
+                multiply = 0.0
+            }
+        }
+
         }
     }
 
