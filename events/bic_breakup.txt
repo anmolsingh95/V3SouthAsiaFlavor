@@ -71,6 +71,7 @@ bic_breakup.1 = {
                         exists = scope:test_scope
                     }
                     set_state_owner = scope:test_scope
+                    set_state_type = incorporated
                     clear_saved_scope = test_scope
                 }
             }
@@ -198,6 +199,7 @@ bic_breakup.1 = {
                             }
                             s:STATE_CIRCARS.region_state:BIC = {
                                 set_state_owner = c:HYD
+                                set_state_type = incorporated
                             }
                         }
                     }
@@ -257,6 +259,7 @@ bic_breakup.1 = {
                                 owner = ROOT
                             }
                             set_state_owner = scope:r_country
+                            set_state_type = incorporated
                         }
                     }
                 }
@@ -291,6 +294,7 @@ bic_breakup.1 = {
                                 owner = ROOT
                             }
                             set_state_owner = scope:r_country
+                            set_state_type = incorporated
                         }
                     }
                 }
@@ -306,6 +310,7 @@ bic_breakup.1 = {
                             is_treaty_port = yes
                          }
                         set_state_owner = scope:test_scope
+                        set_state_type = incorporated
                     }
                 }
             }
@@ -317,6 +322,7 @@ bic_breakup.1 = {
                             is_treaty_port = yes
                          }
                         set_state_owner = ROOT
+                        set_state_type = incorporated
                      }
                  }
              }
