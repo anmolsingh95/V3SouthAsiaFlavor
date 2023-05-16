@@ -264,6 +264,7 @@ bic_breakup.1 = {
                     }
                 }
             }
+
             # give remaining land to adjacent states.
             market = {
                 every_scope_country = {
@@ -304,29 +305,30 @@ bic_breakup.1 = {
             every_subject_or_below = {
             save_scope_as = test_scope
             every_scope_state = {
-                state_region = {
-                    every_scope_state = {
-                        limit = {
-                            is_treaty_port = yes
-                         }
-                        set_state_owner = scope:test_scope
-                        set_state_type = incorporated
+                    state_region = {
+                        every_scope_state = {
+                            limit = {
+                                is_treaty_port = yes
+                             }
+                            set_state_owner = scope:test_scope
+                            set_state_type = incorporated
+                        }
                     }
                 }
-            }
-            every_scope_state = {
-                save_scope_as = test_scope
-                state_region = {
-                    every_scope_state = {
-                        limit = {
-                            is_treaty_port = yes
+                every_scope_state = {
+                    save_scope_as = test_scope
+                    state_region = {
+                        every_scope_state = {
+                            limit = {
+                                is_treaty_port = yes
+                             }
+                            set_state_owner = ROOT
+                            set_state_type = incorporated
                          }
-                        set_state_owner = ROOT
-                        set_state_type = incorporated
                      }
                  }
-             }
-            clear_saved_scope = test_scope
+                clear_saved_scope = test_scope
+            }
         }
 
         clear_saved_scope = test_scope
