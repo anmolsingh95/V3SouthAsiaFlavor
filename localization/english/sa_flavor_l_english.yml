@@ -13,5 +13,9 @@
   je_fate_of_the_tribesmen:0 "Fate of the tribesmen"
   je_fate_of_the_tribesmen_desc:0 "After Panjab secures its frontiers and access to the ocean, it needs to be decided what to do with the western tribesmen."
 
+  # consolidate indian raj
+  je_consolidate_indian_raj:0 "Consolidate Indian Raj"
+  je_consolidate_indian_raj_desc:0 "Having all Indian territories be centrally governed by the British Raj will reduce inefficiencies in our administration."
+
   # threatened
   DIPLOMATIC_ACCEPTANCE_UNDER_THREAT:1 "[SCOPE.GetRootScope.GetCountry.GetAdjectiveNoFormatting] sees us as a deterrent against foreign aggression"

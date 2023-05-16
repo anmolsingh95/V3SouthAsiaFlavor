@@ -1,0 +1,40 @@
+﻿je_consolidate_indian_raj = {
+    is_shown = {
+        exists = c:GBR
+        c:GBR = ROOT
+        exists = c:BIC
+        has_variable = british_raj_var
+        has_diplomatic_pact = {
+            who = c:BIC
+            type = puppet
+        }
+    }
+    possible = {
+        is_at_war = no
+        is_subject = no
+        any_subject_or_below = {
+            any_scope_state = {
+                OR = {
+                    region = sr:region_north_india
+                    region = sr:region_south_india
+                }
+            }
+        }
+    }
+    when_taken = {
+        every_subject_or_below = {
+            every_scope_state = {
+                limit = {
+                    OR = {
+                        region = sr:region_north_india
+                        region = sr:region_south_india
+                    }
+                }
+                set_state_owner = c:BIC
+            }
+        }
+    }
+    ai_chance = {
+        base = 100
+    }
+}
