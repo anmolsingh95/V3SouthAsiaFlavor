@@ -13,6 +13,7 @@
         is_at_war = no
         is_subject = no
         any_subject_or_below = {
+            NOT = { this = c:BIC }
             any_scope_state = {
                 OR = {
                     region = sr:region_north_india
@@ -23,6 +24,9 @@
     }
     when_taken = {
         every_subject_or_below = {
+            limit = {
+                NOT = { this = c:BIC }
+            }
             every_scope_state = {
                 limit = {
                     OR = {
