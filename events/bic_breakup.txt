@@ -76,87 +76,27 @@ bic_breakup.1 = {
                 }
             }
 
-            # create awadh empire if it does not exist
+            # create mughal empire (equivalent) if it does not exist
             if = {
                 limit = {
                     exists = s:STATE_AWADH.region_state:BIC
-                    NOT = { exists = c:AWA }
+                    NOT = { exists = c:MUG }
                 }
                 create_country = {
-                    tag = AWA
+                    tag = MUG
                     origin = this
                     state = s:STATE_AWADH.region_state:BIC
                     on_created = {
                         c:BIC  = {
                             create_diplomatic_pact = {
-                                country = c:AWA
+                                country = c:MUG
                                 type = puppet
                             }
                         }
                     }
                 }
             }
-            # create baroda if it does not exist
-            if = {
-                limit = {
-                    exists = s:STATE_GUJARAT.region_state:BIC
-                    NOT = { exists = c:BER }
-                }
-                create_country = {
-                    tag = BER
-                    origin = this
-                    state = s:STATE_GUJARAT.region_state:BIC
-                    on_created = {
-                        c:BIC  = {
-                            create_diplomatic_pact = {
-                                country = c:BER
-                                type = puppet
-                            }
-                        }
-                    }
-                }
-            }
-            # create nagpur if it does not exist
-            if = {
-                limit = {
-                    exists = s:STATE_NAGPUR.region_state:BIC
-                    NOT = { exists = c:NAG }
-                }
-                create_country = {
-                    tag = NAG
-                    origin = this
-                    state = s:STATE_NAGPUR.region_state:BIC
-                    on_created = {
-                        c:BIC  = {
-                            create_diplomatic_pact = {
-                                country = c:NAG
-                                type = puppet
-                            }
-                        }
-                    }
-                }
-            }
-            # create orissa if it does not exist
-            if = {
-                limit = {
-                    exists = s:STATE_ORISSA.region_state:BIC
-                    NOT = { exists = c:ORI }
-                }
-                create_country = {
-                    tag = ORI
-                    origin = this
-                    state = s:STATE_ORISSA.region_state:BIC
-                    on_created = {
-                        c:BIC  = {
-                            create_diplomatic_pact = {
-                                country = c:ORI
-                                type = puppet
-                            }
-                        }
-                    }
-                }
-            }
-            # create mysore if it does not exist
+            # create mysore (equivalent) if it does not exist
             if = {
                 limit = {
                     exists = s:STATE_MYSORE.region_state:BIC
@@ -176,21 +116,39 @@ bic_breakup.1 = {
                     }
                 }
             }
-            # create hyderabad if it does not exist
+            # create maratha empire (equivalent) if it does not exist
             if = {
                 limit = {
-                    exists = s:STATE_HYDERABAD.region_state:BIC
-                    NOT = { exists = c:HYD }
+                    exists = s:STATE_BOMBAY.region_state:BIC
+                    NOT = { exists = c:BHO }
                 }
                 create_country = {
-                    tag = HYD
+                    tag = BHO
                     origin = this
-                    state = s:STATE_HYDERABAD.region_state:BIC
+                    state = s:STATE_BOMBAY.region_state:BIC
                     on_created = {
                         c:BIC  = {
                             create_diplomatic_pact = {
-                                country = c:HYD
+                                country = c:BHO
                                 type = puppet
+                            }
+                        }
+                        if = {
+                            limit = {
+                                exists = s:STATE_GUJARAT.region_state:BIC
+                            }
+                            s:STATE_GUJARAT.region_state:BIC = {
+                                set_state_owner = c:BHO
+                                set_state_type = incorporated
+                            }
+                        }
+                        if = {
+                            limit = {
+                                exists = s:STATE_RAJPUTANA.region_state:BIC
+                            }
+                            s:STATE_RAJPUTANA.region_state:BIC = {
+                                set_state_owner = c:BHO
+                                set_state_type = incorporated
                             }
                         }
                         if = {
@@ -198,29 +156,26 @@ bic_breakup.1 = {
                                 exists = s:STATE_CIRCARS.region_state:BIC
                             }
                             s:STATE_CIRCARS.region_state:BIC = {
-                                set_state_owner = c:HYD
+                                set_state_owner = c:BHO
                                 set_state_type = incorporated
                             }
                         }
-                    }
-                }
-            }
-
-            # create assam if it does not exist
-            if = {
-                limit = {
-                    exists = s:STATE_ASSAM.region_state:BIC
-                    NOT = { exists = c:ASM }
-                }
-                create_country = {
-                    tag = ASM
-                    origin = this
-                    state = s:STATE_ASSAM.region_state:BIC
-                    on_created = {
-                        c:BIC  = {
-                            create_diplomatic_pact = {
-                                country = c:ASM
-                                type = puppet
+                        if = {
+                            limit = {
+                                exists = s:STATE_CENTRAL_INDIA.region_state:BIC
+                            }
+                            s:STATE_CENTRAL_INDIA.region_state:BIC = {
+                                set_state_owner = c:BHO
+                                set_state_type = incorporated
+                            }
+                        }
+                        if = {
+                            limit = {
+                                exists = s:STATE_NAGPUR.region_state:BIC
+                            }
+                            s:STATE_NAGPUR.region_state:BIC = {
+                                set_state_owner = c:BHO
+                                set_state_type = incorporated
                             }
                         }
                     }

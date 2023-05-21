@@ -1,11 +1,4 @@
-﻿BIK = {
-    states = {
-        STATE_RAJPUTANA
-    }
-    ai_will_do = { always = no }
-}
-
-MUG = {
+﻿MUG = {
     states = {
         STATE_DELHI
         STATE_AWADH
