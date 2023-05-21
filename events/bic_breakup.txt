@@ -43,38 +43,6 @@ bic_breakup.1 = {
             base = 8 # this is the default pick for the AI
         }
         hidden_effect = {
-            # first give back the split states
-            every_scope_state = {
-                limit = {
-                    is_split_state = yes
-                }
-                state_region = {
-                    every_scope_state = {
-                        owner =  {
-                            if = {
-                                limit = {
-                                    any_primary_culture = {
-                                        OR = {
-                                            has_discrimination_trait = south_asian_heritage
-                                            has_discrimination_trait = southeast_asian_heritage
-                                        }
-                                    }
-                                }
-                                save_scope_as = test_scope
-                            }
-                        }
-                    }
-                }
-                if = {
-                    limit = {
-                        exists = scope:test_scope
-                    }
-                    set_state_owner = scope:test_scope
-                    set_state_type = incorporated
-                    clear_saved_scope = test_scope
-                }
-            }
-
             # create mughal empire (equivalent) if it does not exist
             if = {
                 limit = {
@@ -90,6 +58,15 @@ bic_breakup.1 = {
                             create_diplomatic_pact = {
                                 country = c:MUG
                                 type = puppet
+                            }
+                        }
+                        if = {
+                            limit = {
+                                exists = s:STATE_BIHAR.region_state:BIC
+                            }
+                            s:STATE_BIHAR.region_state:BIC = {
+                                set_state_owner = c:MUG
+                                set_state_type = incorporated
                             }
                         }
                     }
@@ -139,6 +116,33 @@ bic_breakup.1 = {
                             create_diplomatic_pact = {
                                 country = c:MYS
                                 type = puppet
+                            }
+                        }
+                        if = {
+                            limit = {
+                                exists = s:STATE_TRAVANCORE.region_state:BIC
+                            }
+                            s:STATE_TRAVANCORE.region_state:BIC = {
+                                set_state_owner = c:MYS
+                                set_state_type = incorporated
+                            }
+                        }
+                        if = {
+                            limit = {
+                                exists = s:STATE_MADRAS.region_state:BIC
+                            }
+                            s:STATE_MADRAS.region_state:BIC = {
+                                set_state_owner = c:MYS
+                                set_state_type = incorporated
+                            }
+                        }
+                        if = {
+                            limit = {
+                                exists = s:STATE_CEYLON.region_state:BIC
+                            }
+                            s:STATE_CEYLON.region_state:BIC = {
+                                set_state_owner = c:MYS
+                                set_state_type = incorporated
                             }
                         }
                     }
@@ -197,23 +201,28 @@ bic_breakup.1 = {
                                 set_state_type = incorporated
                             }
                         }
+                        if = {
+                            limit = {
+                                exists = s:STATE_ORISSA.region_state:BIC
+                            }
+                            s:STATE_ORISSA.region_state:BIC = {
+                                set_state_owner = c:BHO
+                                set_state_type = incorporated
+                            }
+                        }
                     }
                 }
             }
 
             # give land to homeland culture accepted states.
             market = {
-                every_scope_country = {
-                    limit = {
-                        is_subject_of = ROOT
-                    }
+                every_country = {
                     save_temporary_scope_as = r_country
                     while = {
                         limit = {
                             any_neighbouring_state = {
-                                is_capital = no
                                 state_region = {
-                                    NOR = {
+                                    NOT = {
                                         is_homeland = cu:bengali
                                     }
                                 }
@@ -223,9 +232,8 @@ bic_breakup.1 = {
                         }
                         every_neighbouring_state = {
                             limit = {
-                                is_capital = no
                                 state_region = {
-                                    NOR = {
+                                    NOT = {
                                         is_homeland = cu:bengali
                                     }
                                 }
@@ -249,9 +257,8 @@ bic_breakup.1 = {
                     while = {
                         limit = {
                             any_neighbouring_state = {
-                                is_capital = no
                                 state_region = {
-                                    NOR = {
+                                    NOT = {
                                         is_homeland = cu:bengali
                                     }
                                 }
@@ -260,9 +267,8 @@ bic_breakup.1 = {
                         }
                         every_neighbouring_state = {
                             limit = {
-                                is_capital = no
                                 state_region = {
-                                    NOR = {
+                                    NOT = {
                                         is_homeland = cu:bengali
                                     }
                                 }
