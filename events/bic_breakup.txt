@@ -47,7 +47,6 @@ bic_breakup.1 = {
             every_scope_state = {
                 limit = {
                     is_split_state = yes
-
                 }
                 state_region = {
                     every_scope_state = {
