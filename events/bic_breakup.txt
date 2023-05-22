@@ -48,6 +48,7 @@ bic_breakup.1 = {
                 limit = {
                     exists = s:STATE_AWADH.region_state:BIC
                     NOT = { exists = c:MUG }
+                    NOT = { exists = c:AWA }
                 }
                 create_country = {
                     tag = MUG
@@ -72,6 +73,17 @@ bic_breakup.1 = {
                     }
                 }
             }
+            if = {
+                limit = {
+                    exists = c:AWA
+                    exists = s:STATE_BIHAR.region_state:BIC
+                    has_strategic_adjacency = c:AWA
+                }
+                s:STATE_BIHAR.region_state:BIC = {
+                    set_state_owner = c:AWA
+                    set_state_type = incorporated
+                }
+            }
             # create hyderabad if it does not exist
             if = {
                 limit = {
@@ -89,16 +101,17 @@ bic_breakup.1 = {
                                 type = puppet
                             }
                         }
-                        if = {
-                            limit = {
-                                exists = s:STATE_CIRCARS.region_state:BIC
-                            }
-                            s:STATE_CIRCARS.region_state:BIC = {
-                                set_state_owner = c:HYD
-                                set_state_type = incorporated
-                            }
-                        }
                     }
+                }
+            }
+            if = {
+                limit = {
+                    exists = s:STATE_CIRCARS.region_state:BIC
+                }
+                s:STATE_CIRCARS.region_state:BIC = {
+                    has_strategic_adjacency = c:HYD
+                    set_state_owner = c:HYD
+                    set_state_type = incorporated
                 }
             }
             # create mysore (equivalent) if it does not exist
@@ -148,6 +161,26 @@ bic_breakup.1 = {
                     }
                 }
             }
+            # create ceylon if it does not exist
+            if = {
+                limit = {
+                    exists = s:STATE_CEYLON.region_state:BIC
+                    NOT = { exists = c:CEY }
+                }
+                create_country = {
+                    tag = CEY
+                    origin = this
+                    state = s:STATE_CEYLON.region_state:BIC
+                    on_created = {
+                        c:BIC  = {
+                            create_diplomatic_pact = {
+                                country = c:CEY
+                                type = puppet
+                            }
+                        }
+                    }
+                }
+            }
             # create maratha empire (equivalent) if it does not exist
             if = {
                 limit = {
@@ -185,15 +218,6 @@ bic_breakup.1 = {
                         }
                         if = {
                             limit = {
-                                exists = s:STATE_CENTRAL_INDIA.region_state:BIC
-                            }
-                            s:STATE_CENTRAL_INDIA.region_state:BIC = {
-                                set_state_owner = c:BHO
-                                set_state_type = incorporated
-                            }
-                        }
-                        if = {
-                            limit = {
                                 exists = s:STATE_NAGPUR.region_state:BIC
                             }
                             s:STATE_NAGPUR.region_state:BIC = {
@@ -211,6 +235,16 @@ bic_breakup.1 = {
                             }
                         }
                     }
+                }
+            }
+            if = {
+                limit = {
+                    exists = s:STATE_CENTRAL_INDIA.region_state:BIC
+                }
+                s:STATE_CENTRAL_INDIA.region_state:BIC = {
+                    has_strategic_adjacency = c:BHO
+                    set_state_owner = c:BHO
+                    set_state_type = incorporated
                 }
             }
 
