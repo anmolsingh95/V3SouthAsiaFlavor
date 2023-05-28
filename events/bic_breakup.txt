@@ -43,6 +43,7 @@ bic_breakup.1 = {
             base = 8 # this is the default pick for the AI
         }
         hidden_effect = {
+
             # create mughal empire (equivalent) if it does not exist
             if = {
                 limit = {
@@ -77,7 +78,9 @@ bic_breakup.1 = {
                 limit = {
                     exists = c:AWA
                     exists = s:STATE_BIHAR.region_state:BIC
-                    has_strategic_adjacency = c:AWA
+                    c:AWA = {
+                        has_strategic_adjacency = s:STATE_BIHAR.region_state:BIC
+                    }
                 }
                 s:STATE_BIHAR.region_state:BIC = {
                     set_state_owner = c:AWA
@@ -101,17 +104,16 @@ bic_breakup.1 = {
                                 type = puppet
                             }
                         }
+                        if = {
+                            limit = {
+                                exists = s:STATE_CIRCARS.region_state:BIC
+                            }
+                            s:STATE_CIRCARS.region_state:BIC = {
+                                set_state_owner = c:HYD
+                                set_state_type = incorporated
+                            }
+                        }
                     }
-                }
-            }
-            if = {
-                limit = {
-                    exists = s:STATE_CIRCARS.region_state:BIC
-                }
-                s:STATE_CIRCARS.region_state:BIC = {
-                    has_strategic_adjacency = c:HYD
-                    set_state_owner = c:HYD
-                    set_state_type = incorporated
                 }
             }
             # create mysore (equivalent) if it does not exist
@@ -234,18 +236,47 @@ bic_breakup.1 = {
                                 set_state_type = incorporated
                             }
                         }
+                        if = {
+                            limit = {
+                                exists = s:STATE_CENTRAL_INDIA.region_state:BIC
+                            }
+                            s:STATE_CENTRAL_INDIA.region_state:BIC = {
+                                set_state_owner = c:BHO
+                                set_state_type = incorporated
+                            }
+                        }
                     }
                 }
             }
-            if = {
-                limit = {
-                    exists = s:STATE_CENTRAL_INDIA.region_state:BIC
+
+            # give back split states
+            every_scope_state = {
+                if = {
+                    limit = {
+                        is_split_state = yes
+                    }
                 }
-                s:STATE_CENTRAL_INDIA.region_state:BIC = {
-                    has_strategic_adjacency = c:BHO
-                    set_state_owner = c:BHO
+                state_region = {
+                    every_scope_state = {
+                        if = {
+                            limit = {
+                                NOT = {
+                                    owner = ROOT
+                                }
+                                is_treaty_port = no
+                            }
+                            save_scope_as = r_state
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        exists = scope:r_state
+                    }
+                    set_state_owner = scope:r_state.owner
                     set_state_type = incorporated
                 }
+                clear_saved_scope = r_state
             }
 
             # give land to homeland culture accepted states.
