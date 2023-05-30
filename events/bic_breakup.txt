@@ -43,6 +43,31 @@ bic_breakup.1 = {
             base = 8 # this is the default pick for the AI
         }
         hidden_effect = {
+            # give back split states
+            every_scope_state= {
+                limit = {
+                    owner = ROOT
+                    is_split_state = yes
+                }
+                state_region = {
+                    every_scope_state = {
+                        limit = {
+                            NOT = {
+                                owner = ROOT
+                            }
+                            is_treaty_port = no
+                        }
+                        save_scope_as = r_state
+                    }
+                }
+                if = {
+                    limit = {
+                        exists = scope:r_state
+                    }
+                    set_state_owner = scope:r_state.owner
+                }
+                clear_saved_scope = r_state
+            }
 
             # create mughal empire (equivalent) if it does not exist
             if = {
@@ -249,65 +274,33 @@ bic_breakup.1 = {
                 }
             }
 
-            # give back split states
-            every_scope_state = {
-                if = {
-                    limit = {
-                        is_split_state = yes
-                    }
-                }
-                state_region = {
-                    every_scope_state = {
-                        if = {
-                            limit = {
-                                NOT = {
-                                    owner = ROOT
-                                }
-                                is_treaty_port = no
-                            }
-                            save_scope_as = r_state
-                        }
-                    }
-                }
-                if = {
-                    limit = {
-                        exists = scope:r_state
-                    }
-                    set_state_owner = scope:r_state.owner
-                    set_state_type = incorporated
-                }
-                clear_saved_scope = r_state
-            }
-
             # give land to homeland culture accepted states.
-            market = {
-                every_country = {
-                    save_temporary_scope_as = r_country
-                    while = {
+            every_country = {
+                save_temporary_scope_as = r_country
+                while = {
+                    limit = {
+                        any_neighbouring_state = {
+                            state_region = {
+                                NOT = {
+                                    is_homeland = cu:bengali
+                                }
+                            }
+                            is_homeland_of_country_cultures = scope:r_country
+                            owner = ROOT
+                        }
+                    }
+                    every_neighbouring_state = {
                         limit = {
-                            any_neighbouring_state = {
-                                state_region = {
-                                    NOT = {
-                                        is_homeland = cu:bengali
-                                    }
+                            state_region = {
+                                NOT = {
+                                    is_homeland = cu:bengali
                                 }
-                                is_homeland_of_country_cultures = scope:r_country
-                                owner = ROOT
                             }
+                            is_homeland_of_country_cultures = scope:r_country
+                            owner = ROOT
                         }
-                        every_neighbouring_state = {
-                            limit = {
-                                state_region = {
-                                    NOT = {
-                                        is_homeland = cu:bengali
-                                    }
-                                }
-                                is_homeland_of_country_cultures = scope:r_country
-                                owner = ROOT
-                            }
-                            set_state_owner = scope:r_country
-                            set_state_type = incorporated
-                        }
+                        set_state_owner = scope:r_country
+                        set_state_type = incorporated
                     }
                 }
             }
