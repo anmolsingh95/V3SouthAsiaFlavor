@@ -176,15 +176,6 @@ bic_breakup.1 = {
                                 set_state_type = incorporated
                             }
                         }
-                        if = {
-                            limit = {
-                                exists = s:STATE_CEYLON.region_state:BIC
-                            }
-                            s:STATE_CEYLON.region_state:BIC = {
-                                set_state_owner = c:MYS
-                                set_state_type = incorporated
-                            }
-                        }
                     }
                 }
             }
@@ -354,7 +345,7 @@ bic_breakup.1 = {
             remove_primary_culture = cu:british
             add_primary_culture = cu:bengali
             set_state_religion = rel:sunni
-            ig:ig_devout = { 
+            ig:ig_devout = {
                  set_interest_group_name = ig_sunni_madrasahs
             }
             every_scope_character = {
