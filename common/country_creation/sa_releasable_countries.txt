@@ -41,20 +41,14 @@ HYD = {
     ai_will_do = { always = no }
 }
 
-NAG = {
-    states = {
-        STATE_NAGPUR
-        STATE_BOMBAY
-        STATE_CENTRAL_INDIA
-    }
-    ai_will_do = { always = no }
-}
-
 BHO = {
     states = {
+        STATE_RAJPUTANA
+        STATE_GUJARAT
         STATE_NAGPUR
         STATE_BOMBAY
         STATE_CENTRAL_INDIA
+        STATE_ORISSA
     }
     ai_will_do = { always = no }
 }
