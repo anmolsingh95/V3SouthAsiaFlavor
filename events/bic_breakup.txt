@@ -340,22 +340,32 @@ bic_breakup.1 = {
                 make_independent = yes
             }
         }
-        change_tag = BGL
-        hidden_effect = {
-            remove_primary_culture = cu:british
-            add_primary_culture = cu:bengali
-            set_state_religion = rel:sunni
-            ig:ig_devout = {
-                 set_interest_group_name = ig_sunni_madrasahs
+
+        if = {
+            limit = {
+                exists = c:BGL
             }
-            every_scope_character = {
-                limit = {
-                    OR = {
-                        culture = cu:british
-                        culture = cu:scottish
-                    }
+            every_scope_state = {
+                set_state_owner = c:BGL
+            }
+        } else = {
+            change_tag = BGL
+            hidden_effect = {
+                remove_primary_culture = cu:british
+                add_primary_culture = cu:bengali
+                set_state_religion = rel:sunni
+                ig:ig_devout = {
+                     set_interest_group_name = ig_sunni_madrasahs
                 }
-                kill_character = yes
+                every_scope_character = {
+                    limit = {
+                        OR = {
+                            culture = cu:british
+                            culture = cu:scottish
+                        }
+                    }
+                    kill_character = yes
+                }
             }
         }
     }
