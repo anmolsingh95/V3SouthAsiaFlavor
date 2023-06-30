@@ -4,6 +4,7 @@
         STATE_AWADH
         STATE_BIHAR
         STATE_CENTRAL_INDIA
+        STATE_BOMBAY
     }
     ai_will_do = { always = no }
 } 
