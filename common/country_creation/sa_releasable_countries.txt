@@ -3,6 +3,7 @@
         STATE_DELHI
         STATE_AWADH
         STATE_BIHAR
+        STATE_CENTRAL_INDIA
     }
     ai_will_do = { always = no }
 } 
