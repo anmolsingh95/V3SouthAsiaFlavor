@@ -23,18 +23,44 @@ sa_raj.2 = {
     #minor_right_icon = scope:doctrine_of_lapse_target_country
 
     immediate = {
-        random_state = {
+            # always take out awadh first.
+        if = {
             limit = {
-                owner = {
+                exists = s:STATE_AWADH.region_state:AWA
+                c:AWA = {
                     is_subject_of = ROOT
                     is_player = no
-                    OR = {
-                        has_government_type = gov_princely_state_hindu
-                        has_government_type = gov_princely_state_muslim
-                    }
                 }
             }
-            save_scope_as = doctrine_of_lapse_target_state_1
+            s:STATE_AWADH.region_state:AWA = {
+                save_scope_as = doctrine_of_lapse_target_state_1
+            }
+        } else_if = {
+            # take out mysore next.
+            limit = {
+                exists = s:STATE_MYSORE.region_state:MYS
+                c:MYS = {
+                    is_subject_of = ROOT
+                    is_player = no
+                }
+            }
+            s:STATE_MYSORE.region_state:MYS = {
+                save_scope_as = doctrine_of_lapse_target_state_1
+            }
+        } else = {
+            random_state = {
+                limit = {
+                    owner = {
+                        is_subject_of = ROOT
+                        is_player = no
+                        OR = {
+                            has_government_type = gov_princely_state_hindu
+                            has_government_type = gov_princely_state_muslim
+                        }
+                    }
+                }
+                save_scope_as = doctrine_of_lapse_target_state_1
+            }
         }
         random_state = {
             limit = {
