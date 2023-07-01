@@ -96,6 +96,9 @@ sa_raj.2 = {
     option = {
         name = raj.2.a
         default_option = yes
+        ai_chance = {
+            base = 100 # AI will never do this
+        }
         scope:doctrine_of_lapse_target_state_1 = {
             remove_building = building_barracks
             set_state_owner = ROOT
