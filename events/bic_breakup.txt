@@ -87,27 +87,7 @@ bic_breakup.1 = {
                                 type = puppet
                             }
                         }
-                        if = {
-                            limit = {
-                                exists = s:STATE_BIHAR.region_state:BIC
-                            }
-                            s:STATE_BIHAR.region_state:BIC = {
-                                set_state_owner = c:MUG
-                            }
-                        }
                     }
-                }
-            }
-            if = {
-                limit = {
-                    exists = c:AWA
-                    exists = s:STATE_BIHAR.region_state:BIC
-                    c:AWA = {
-                        has_strategic_adjacency = s:STATE_BIHAR.region_state:BIC
-                    }
-                }
-                s:STATE_BIHAR.region_state:BIC = {
-                    set_state_owner = c:AWA
                 }
             }
             # create hyderabad if it does not exist
@@ -262,8 +242,9 @@ bic_breakup.1 = {
                     limit = {
                         any_neighbouring_state = {
                             state_region = {
-                                NOT = {
+                                NOR = {
                                     is_homeland = cu:bengali
+                                    is_homeland = cu:bihari
                                 }
                             }
                             is_homeland_of_country_cultures = scope:r_country
@@ -273,8 +254,9 @@ bic_breakup.1 = {
                     every_neighbouring_state = {
                         limit = {
                             state_region = {
-                                NOT = {
+                                NOR = {
                                     is_homeland = cu:bengali
+                                    is_homeland = cu:bihari
                                 }
                             }
                             is_homeland_of_country_cultures = scope:r_country
@@ -296,8 +278,9 @@ bic_breakup.1 = {
                         limit = {
                             any_neighbouring_state = {
                                 state_region = {
-                                    NOT = {
+                                    NOR = {
                                         is_homeland = cu:bengali
+                                        is_homeland = cu:bihari
                                     }
                                 }
                                 owner = ROOT
@@ -306,8 +289,9 @@ bic_breakup.1 = {
                         every_neighbouring_state = {
                             limit = {
                                 state_region = {
-                                    NOT = {
+                                    NOR = {
                                         is_homeland = cu:bengali
+                                        is_homeland = cu:bihari
                                     }
                                 }
                                 owner = ROOT
@@ -341,6 +325,7 @@ bic_breakup.1 = {
             hidden_effect = {
                 remove_primary_culture = cu:british
                 add_primary_culture = cu:bengali
+                add_primary_culture = cu:bihari
                 set_state_religion = rel:sunni
                 ig:ig_devout = {
                      set_interest_group_name = ig_sunni_madrasahs
