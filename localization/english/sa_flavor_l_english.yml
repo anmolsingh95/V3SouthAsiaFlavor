@@ -1,10 +1,9 @@
 ﻿l_english:
-  ai_strategy_unify_india:0 "Unify India"
-  ai_strategy_unify_india_desc:0 "[COUNTRY.GetName] wants to unite the Indian princes under their banner."
-
   # consolidate indian raj
   je_consolidate_indian_raj:0 "Consolidate Indian Raj"
   je_consolidate_indian_raj_desc:0 "Having all Indian territories be centrally governed by the British Raj will reduce inefficiencies in our administration."
 
-  # threatened
-  DIPLOMATIC_ACCEPTANCE_UNDER_THREAT:1 "[SCOPE.GetRootScope.GetCountry.GetAdjectiveNoFormatting] sees us as a deterrent against foreign aggression"
+  # doctrine of lapse
+  sa_raj.2.a:0 "[SCOPE.sCountry('doctrine_of_lapse_target_country_1').GetName] needs a better administrator."
+  sa_raj.2.b:0 "[SCOPE.sCountry('doctrine_of_lapse_target_country_2').GetName] looks like a good candidate."
+  sa_raj.2.c:0 "[SCOPE.sCountry('doctrine_of_lapse_target_country_3').GetName] is ours."

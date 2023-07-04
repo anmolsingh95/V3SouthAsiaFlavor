@@ -23,48 +23,34 @@ sa_raj.2 = {
     #minor_right_icon = scope:doctrine_of_lapse_target_country
 
     immediate = {
-            # always take out awadh first.
+
         if = {
+            # take out mysore first
             limit = {
-                exists = s:STATE_AWADH.region_state:AWA
-                c:AWA = {
-                    is_subject_of = ROOT
-                    is_player = no
-                }
-            }
-            s:STATE_AWADH.region_state:AWA = {
-                save_scope_as = doctrine_of_lapse_target_state_1
-            }
-        } else_if = {
-            # take out mysore next.
-            limit = {
-                exists = s:STATE_MYSORE.region_state:MYS
+                exists = c:MYS
                 c:MYS = {
                     is_subject_of = ROOT
                     is_player = no
                 }
             }
-            s:STATE_MYSORE.region_state:MYS = {
-                save_scope_as = doctrine_of_lapse_target_state_1
+            c:MYS = {
+                save_scope_as = doctrine_of_lapse_target_country_1
+            }
+        } else_if = {
+            # prioritize hyderabad next
+            limit = {
+                exists = c:HYD
+                c:HYD = {
+                    is_subject_of = ROOT
+                    is_player = no
+                }
+            }
+            c:HYD = {
+                save_scope_as = doctrine_of_lapse_target_country_2
             }
         } else = {
-            random_state = {
+            random_subject_or_below = {
                 limit = {
-                    owner = {
-                        is_subject_of = ROOT
-                        is_player = no
-                        OR = {
-                            has_government_type = gov_princely_state_hindu
-                            has_government_type = gov_princely_state_muslim
-                        }
-                    }
-                }
-                save_scope_as = doctrine_of_lapse_target_state_1
-            }
-        }
-        random_state = {
-            limit = {
-                owner = {
                     is_subject_of = ROOT
                     is_player = no
                     OR = {
@@ -72,78 +58,93 @@ sa_raj.2 = {
                         has_government_type = gov_princely_state_muslim
                     }
                 }
-                NOT = { this = scope:doctrine_of_lapse_target_state_1 }
+                save_scope_as = doctrine_of_lapse_target_country_1
             }
-            save_scope_as = doctrine_of_lapse_target_state_2
         }
-        random_state = {
-            limit = {
-                owner = {
-                    is_subject_of = ROOT
-                    is_player = no
-                    OR = {
-                        has_government_type = gov_princely_state_hindu
-                        has_government_type = gov_princely_state_muslim
-                    }
+        random_subject_or_below = {
+            owner = {
+                is_subject_of = ROOT
+                is_player = no
+                OR = {
+                    has_government_type = gov_princely_state_hindu
+                    has_government_type = gov_princely_state_muslim
                 }
-                NOT = { this = scope:doctrine_of_lapse_target_state_1 }
-                NOT = { this = scope:doctrine_of_lapse_target_state_2 }
             }
-            save_scope_as = doctrine_of_lapse_target_state_3
+            NOT = { this = scope:doctrine_of_lapse_target_country_1 }
+            save_scope_as = doctrine_of_lapse_target_country_2
+        }
+        random_subject_or_below = {
+            owner = {
+                is_subject_of = ROOT
+                is_player = no
+                OR = {
+                    has_government_type = gov_princely_state_hindu
+                    has_government_type = gov_princely_state_muslim
+                }
+            }
+            NOT = { this = scope:doctrine_of_lapse_target_country_1 }
+            NOT = { this = scope:doctrine_of_lapse_target_country_2 }
+            save_scope_as = doctrine_of_lapse_target_country_3
         }
     }
 
     option = {
-        name = raj.2.a
+        name = sa_raj.2.a
         default_option = yes
         ai_chance = {
-            base = 100 # AI will never do this
+            base = 100 # AI will always pick this
         }
-        scope:doctrine_of_lapse_target_state_1 = {
-            remove_building = building_barracks
-            set_state_owner = ROOT
-            add_radicals_in_state = {
-                value = very_large_radicals
+        scope:doctrine_of_lapse_target_country_1 = {
+            every_scope_state = {
+                remove_building = building_barracks
+                set_state_owner = ROOT
+                add_radicals_in_state = {
+                    value = very_large_radicals
+                }
             }
         }
         create_incident = {
-            country = scope:doctrine_of_lapse_target_state_1.owner
+            country = scope:doctrine_of_lapse_target_country_1
             value = 20
         }
     }
 
     option = {
-        name = raj.2.b
+        name = sa_raj.2.b
         trigger = {
-            exists = scope:doctrine_of_lapse_target_state_2
+            exists = scope:doctrine_of_lapse_target_country_2
         }
-        scope:doctrine_of_lapse_target_state_2 = {
-            remove_building = building_barracks
-            set_state_owner = ROOT
-            add_radicals_in_state = {
-                value = very_large_radicals
+        scope:doctrine_of_lapse_target_country_2 = {
+            every_scope_state = {
+                remove_building = building_barracks
+                set_state_owner = ROOT
+                add_radicals_in_state = {
+                    value = very_large_radicals
+                }
             }
         }
         create_incident = {
-            country = scope:doctrine_of_lapse_target_state_2.owner
+            country = scope:doctrine_of_lapse_target_country_2
             value = 20
         }
     }
     
     option = {
-        name = raj.2.c
+        name = sa_raj.2.c
         trigger = {
-            exists = scope:doctrine_of_lapse_target_state_3
+            exists = scope:doctrine_of_lapse_target_country_3
         }
-        scope:doctrine_of_lapse_target_state_3 = {
-            remove_building = building_barracks
-            set_state_owner = ROOT
-            add_radicals_in_state = {
-                value = very_large_radicals
+        scope:doctrine_of_lapse_target_country_3 = {
+            every_scope_state = {
+                remove_building = building_barracks
+                set_state_owner = ROOT
+                add_radicals_in_state = {
+                    value = very_large_radicals
+                }
             }
         }
         create_incident = {
-            country = scope:doctrine_of_lapse_target_state_3.owner
+            country = scope:doctrine_of_lapse_target_country_3
             value = 20
         }
     }
