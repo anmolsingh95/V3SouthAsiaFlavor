@@ -62,28 +62,28 @@ sa_raj.2 = {
             }
         }
         random_subject_or_below = {
-            owner = {
+            limit = {
                 is_subject_of = ROOT
                 is_player = no
                 OR = {
                     has_government_type = gov_princely_state_hindu
                     has_government_type = gov_princely_state_muslim
                 }
+                NOT = { this = scope:doctrine_of_lapse_target_country_1 }
             }
-            NOT = { this = scope:doctrine_of_lapse_target_country_1 }
             save_scope_as = doctrine_of_lapse_target_country_2
         }
         random_subject_or_below = {
-            owner = {
+            limit = {
                 is_subject_of = ROOT
                 is_player = no
                 OR = {
                     has_government_type = gov_princely_state_hindu
                     has_government_type = gov_princely_state_muslim
                 }
+                NOT = { this = scope:doctrine_of_lapse_target_country_1 }
+                NOT = { this = scope:doctrine_of_lapse_target_country_2 }
             }
-            NOT = { this = scope:doctrine_of_lapse_target_country_1 }
-            NOT = { this = scope:doctrine_of_lapse_target_country_2 }
             save_scope_as = doctrine_of_lapse_target_country_3
         }
     }
