@@ -43,7 +43,7 @@ HYD = {
     ai_will_do = { always = no }
 }
 
-BHO = {
+NAGPUR = {
     states = {
         STATE_RAJPUTANA
         STATE_GUJARAT

@@ -48,6 +48,18 @@ sa_raj.2 = {
             c:HYD = {
                 save_scope_as = doctrine_of_lapse_target_country_1
             }
+        } else_if = {
+            # prioritize nagpur next
+            limit = {
+                exists = c:NAG
+                c:NAG = {
+                    is_subject_of = ROOT
+                    is_player = no
+                }
+            }
+            c:NAG = {
+                save_scope_as = doctrine_of_lapse_target_country_1
+            }
         } else = {
             random_subject_or_below = {
                 limit = {
