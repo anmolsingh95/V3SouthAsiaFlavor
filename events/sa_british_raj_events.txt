@@ -46,7 +46,7 @@ sa_raj.2 = {
                 }
             }
             c:HYD = {
-                save_scope_as = doctrine_of_lapse_target_country_2
+                save_scope_as = doctrine_of_lapse_target_country_1
             }
         } else = {
             random_subject_or_below = {
