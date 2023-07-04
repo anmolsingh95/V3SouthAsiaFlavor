@@ -60,6 +60,18 @@ sa_raj.2 = {
             c:NAG = {
                 save_scope_as = doctrine_of_lapse_target_country_1
             }
+        } else_if = {
+            # prioritize bastar next
+            limit = {
+                exists = c:BAS
+                c:BAS = {
+                    is_subject_of = ROOT
+                    is_player = no
+                }
+            }
+            c:BAS= {
+                save_scope_as = doctrine_of_lapse_target_country_1
+            }
         } else = {
             random_subject_or_below = {
                 limit = {
