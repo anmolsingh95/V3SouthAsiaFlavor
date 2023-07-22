@@ -3,6 +3,10 @@
   je_consolidate_indian_raj:0 "Consolidate Indian Raj"
   je_consolidate_indian_raj_desc:0 "Having all Indian territories be centrally governed by the British Raj will reduce inefficiencies in our administration."
 
+  # embrace the pashtun
+  je_embrace_pashtun:0 "Embrace the Pashtun minority"
+  je_embrace_pashtun_desc:0 "Panjab is a secular state. It's about time to demonstrate Panjabi ideals to the world by accepting the Pashtuns."
+
   # doctrine of lapse
   sa_raj.2.a:0 "[SCOPE.sCountry('doctrine_of_lapse_target_country_1').GetName] needs a better administrator."
   sa_raj.2.b:0 "[SCOPE.sCountry('doctrine_of_lapse_target_country_2').GetName] looks like a good candidate."

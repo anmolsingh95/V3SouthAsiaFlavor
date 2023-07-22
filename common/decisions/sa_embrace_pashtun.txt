@@ -1,0 +1,23 @@
+﻿je_embrace_pashtun = {
+    is_shown = {
+        exists = c:PAN
+        c:PAN = ROOT
+        NOT = {
+            has_variable = pan_embrace_pashtun
+        }
+    }
+    possible = {
+        is_at_war = no
+        OR = {
+            owns_entire_state_region = STATE_PASHTUNISTAN
+        }
+        has_law = law_type:law_total_separation
+    }
+    when_taken = {
+        add_primary_culture = cu:pashtun
+        set_variable = pan_embrace_pashtun
+    }
+    ai_chance = {
+        base = 100
+    }
+}
