@@ -21,7 +21,7 @@
     }
 
     when_taken = {
-        trigger_event = { id = sa_raj.2 days = 0 popup = yes }
+        trigger_event = { id = raj.2 days = 0 popup = yes }
         set_variable = {
             name = doctrine_of_lapse_cooldown
             years = 2
