@@ -1,4 +1,4 @@
-﻿namespace = raj
+﻿ namespace = raj
 
 # Mutiny!
 raj.6 = {
@@ -37,6 +37,17 @@ raj.6 = {
                 tag = MUG
                 origin = c:BIC
                 state = s:STATE_DELHI.region_state:BIC
+            }
+        }
+        else_if = {
+            limit = {
+                NOT = { exists = c:MUG }
+                exists = s:STATE_AWADH.region_state:BIC
+            }
+            create_country = {
+                tag = MUG
+                origin = c:BIC
+                state = s:STATE_AWADH.region_state:BIC
             }
         }
         else_if = {
@@ -94,7 +105,7 @@ raj.6 = {
             create_diplomatic_play = {
                 name = sepoy_mutiny
                 type = dp_annex_war
-                target_state = s:STATE_DELHI.region_state:MUG
+                target_state = c:MUG.capital
 
                 add_war_goal = {
                     holder = c:MUG
