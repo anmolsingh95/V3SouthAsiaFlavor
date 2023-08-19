@@ -1,9 +1,9 @@
-﻿je_embrace_pashtun = {
+﻿je_embrace_sindi = {
     is_shown = {
         exists = c:PAN
         c:PAN = ROOT
         NOT = {
-            has_variable = pan_embrace_pashtun
+            has_variable = pan_embrace_sindhi
         }
     }
     possible = {
@@ -14,8 +14,8 @@
         has_law = law_type:law_total_separation
     }
     when_taken = {
-        add_primary_culture = cu:pashtun
-        set_variable = pan_embrace_pashtun
+        add_primary_culture = cu:sindi
+        set_variable = pan_embrace_sindi
     }
     ai_chance = {
         base = 100
