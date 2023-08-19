@@ -9,7 +9,7 @@
     possible = {
         is_at_war = no
         OR = {
-            owns_entire_state_region = STATE_PASHTUNISTAN
+            owns_entire_state_region = STATE_SINDH
         }
         has_law = law_type:law_total_separation
     }
