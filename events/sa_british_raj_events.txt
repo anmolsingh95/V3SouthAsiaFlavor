@@ -85,6 +85,51 @@ raj.6 = {
             s:STATE_AWADH.region_state:AWA = { set_state_owner = c:MUG }
         }
         if = {
+            limit = {
+                exists = s:STATE_CENTRAL_INDIA.region_state:BUN
+                c:BUN = {
+                    is_subject_of = ROOT
+                }
+            }
+            s:STATE_CENTRAL_INDIA.region_state:BUN = { set_state_owner = c:MUG }
+        }
+        if = {
+            limit = {
+                exists = s:STATE_NAGPUR.region_state:BUN
+                c:BUN = {
+                    is_subject_of = ROOT
+                }
+            }
+            s:STATE_NAGPUR.region_state:BUN = { set_state_owner = c:MUG }
+        }
+        if = {
+            limit = {
+                exists = s:STATE_CENTRAL_INDIA.region_state:BHO
+                c:BHO = {
+                    is_subject_of = ROOT
+                }
+            }
+            s:STATE_CENTRAL_INDIA.region_state:BHO = { set_state_owner = c:MUG }
+        }
+        if = {
+            limit = {
+                exists = s:STATE_CENTRAL_INDIA.region_state:IND
+                c:IND = {
+                    is_subject_of = ROOT
+                }
+            }
+            s:STATE_CENTRAL_INDIA.region_state:IND = { set_state_owner = c:MUG }
+        }
+        if = {
+            limit = {
+                exists = s:STATE_CENTRAL_INDIA.region_state:GWA
+                c:GWA = {
+                    is_subject_of = ROOT
+                }
+            }
+            s:STATE_CENTRAL_INDIA.region_state:GWA = { set_state_owner = c:MUG }
+        }
+        if = {
             limit = { exists = s:STATE_BIHAR.region_state:BIC }
             s:STATE_BIHAR.region_state:BIC = { set_state_owner = c:MUG }
         }
