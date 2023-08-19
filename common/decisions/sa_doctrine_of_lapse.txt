@@ -29,12 +29,7 @@
     }
 
     ai_chance = {
-        base = 5
-
-        # Annex if infamy allows
-        modifier = {
-            trigger = { root.infamy < 80 }
-            add = 100
-        }
+        # disable AI's use of doctrine of lapse
+        base = 0
     }
 }
