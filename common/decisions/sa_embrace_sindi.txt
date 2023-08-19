@@ -3,7 +3,7 @@
         exists = c:PAN
         c:PAN = ROOT
         NOT = {
-            has_variable = pan_embrace_sindhi
+            has_variable = pan_embrace_sindi
         }
     }
     possible = {
