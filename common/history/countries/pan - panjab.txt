@@ -6,18 +6,11 @@
         add_technology_researched = line_infantry
 
         effect_starting_politics_traditional = yes
-
         activate_law = law_type:law_tenant_farmers # The system in Panjab certainly can not be called Serdom.
         activate_law = law_type:law_professional_army
 
         add_taxed_goods = g:liquor
         add_taxed_goods = g:tobacco
-
-        ig:ig_devout = {
-            set_interest_group_name = ig_sikh_priesthood
-            remove_ideology = ideology_moralist
-            add_ideology = ideology_sikh_moralist
-        }
         
         ig:ig_armed_forces = {
             add_ruling_interest_group = yes
