@@ -29,7 +29,6 @@
     }
 
     ai_chance = {
-        # disable AI's use of doctrine of lapse
-        base = 0
+        base = 100
     }
 }
