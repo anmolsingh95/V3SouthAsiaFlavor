@@ -54,3 +54,26 @@ NAG = {
     }
     ai_will_do = { always = no }
 }
+
+XIN = {
+    states = {
+        STATE_DZUNGARIA
+        STATE_TIANSHAN
+        STATE_JETISY
+        STATE_KIRGHIZIA
+    }
+    ai_will_do = { always = no }
+}
+
+MGL = {
+    states = {
+        STATE_ULIASTAI
+        STATE_URGA
+        STATE_HINGGAN
+        STATE_ALXA
+        STATE_TOMSK
+        STATE_TUVA
+    }
+
+    ai_will_do = { always = no }
+}

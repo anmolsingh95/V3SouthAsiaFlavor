@@ -6,6 +6,8 @@ building_barracks = {
     texture = "gfx/interface/icons/building_icons/building_barracks.dds"
     city_type = city
 
+    has_max_level = no
+
     levels_per_mesh = 25
 
     unlocking_technologies = {
@@ -13,14 +15,30 @@ building_barracks = {
     }
 
     production_method_groups = {
-        pmg_organization
-        pmg_artillery
-        pmg_reconaissance
-        pmg_specialist_companies
-        pmg_medical_aid
+        pmg_training
     }
 
     required_construction = construction_cost_very_low
+}
+
+building_conscription_center = {
+    building_group = bg_conscription
+    buildable = no
+    expandable = no
+    downsizeable = no
+
+    has_max_level = no
+
+    levels_per_mesh = 0
+    residence_points_per_level = 0
+    city_type = none
+
+    recruits_combat_unit = combat_unit_conscript
+    texture = "gfx/interface/icons/building_icons/building_conscription_center.dds"
+
+    production_method_groups = {
+        pmg_training_conscription
+    }
 }
 
 building_naval_base = {
@@ -29,14 +47,13 @@ building_naval_base = {
     city_type = port
     levels_per_mesh = 25
 
+    has_max_level = no
+
     texture = "gfx/interface/icons/building_icons/naval_base.dds"
     naval = yes
     unlocking_technologies = { admiralty }
 
     production_method_groups = {
-        pmg_ship_class
-        pmg_escorts
-        pmg_raiders
         pmg_naval_theory
     }
 
@@ -56,6 +73,7 @@ building_port = {
     city_type = port
     texture = "gfx/interface/icons/building_icons/building_port.dds"
 
+    has_max_level = no
     ignore_stateregion_max_level = yes
     port = yes
 
